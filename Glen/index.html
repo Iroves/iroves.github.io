@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071b31">
+  <meta name="description" content="Glen Coxon — Master Painter & Decorator. Over 20 years experience. Restoration, interiors and exteriors.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Glen Coxon | Master Painter & Decorator">
+  <meta property="og:description" content="Perfectionist. Restoration • Interiors • Exteriors. Call 0422 962 582.">
+  <meta property="og:image" content="assets/glen-portrait.webp">
+  <title>Glen Coxon · Master Painter & Decorator</title>
+  <link rel="icon" type="image/png" href="assets/GC-logo.png">
+  <link rel="preload" href="assets/glen-portrait.webp" as="image">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <article class="profile" aria-label="Glen Coxon profile">
+      <div class="page-shimmer" aria-hidden="true"></div>
+
+      <header class="masthead">
+        <img class="gc-logo" src="assets/GC-logo.png" alt="GC monogram logo" width="148" height="100">
+        <p class="masthead-title">MASTER PAINTER <span>&amp;</span> DECORATOR</p>
+      </header>
+
+      <section class="hero" aria-label="Glen Coxon portrait">
+        <video id="motionVideo" class="paint-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/blue-motion-poster.jpg" aria-hidden="true">
+          <source src="assets/blue-paint-motion.mp4" type="video/mp4">
+        </video>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <img class="portrait" id="portrait" src="assets/glen-portrait.webp" alt="Glen Coxon wearing painter's work clothing" fetchpriority="high">
+        <div class="hero-fade" aria-hidden="true"></div>
+        <span class="craft-badge"><b id="experience">20+</b><small>YEARS OF<br>EXPERIENCE</small></span>
+      </section>
+
+      <section class="identity" aria-labelledby="fullName">
+        <p class="intro">A PASSION FOR THE PERFECT FINISH</p>
+        <h1 id="fullName">Glen Coxon</h1>
+        <p class="trade" id="tradeTitle">Master Painter &amp; Decorator</p>
+        <p class="signature-line">— Perfectionist —</p>
+        <div class="fine-line" aria-hidden="true"><span></span></div>
+        <p class="specialties" id="servicesLine">RESTORATION <i>•</i> INTERIORS <i>•</i> EXTERIORS</p>
+      </section>
+
+      <section class="actions" aria-label="Contact Glen Coxon">
+        <a class="action primary" id="callBtn" href="tel:+61422962582">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3.1a2 2 0 0 1-.6 1.8L7.2 10a16 16 0 0 0 6.8 6.8l1.4-1.8a2 2 0 0 1 1.8-.6l3.1.5a2 2 0 0 1 1.7 2z"/></svg>
+          <span id="callText">Call 0422 962 582</span><span class="arrow">↗</span>
+        </a>
+        <a class="action secondary" id="messageBtn" href="sms:+61422962582">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.7-4.6A8.5 8.5 0 1 1 20.5 11.5z"/></svg>
+          <span>Send a message</span><span class="arrow">↗</span>
+        </a>
+        <button class="action outline" id="saveContact" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+          <span>Save contact</span><span class="arrow">↓</span>
+        </button>
+      </section>
+
+      <footer class="footer">
+        <span>QUALITY IS IN THE DETAILS</span>
+        <button id="shareCard" type="button" class="share" aria-label="Share Glen's card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="5" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8 11 7-5M8 13l7 5"/></svg> Share
+        </button>
+      </footer>
+    </article>
+    <p class="under-card">A timeless finish. A lasting impression.</p>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
