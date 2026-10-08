@@ -54,6 +54,13 @@ h2{font:700 clamp(30px,4vw,44px)/1.05 Georgia,serif;margin:4px 0 10px}
 .dish:hover{transform:translateY(-4px);border-color:var(--gold)}
 .dish-media{position:relative;aspect-ratio:1.22/1;overflow:hidden;background:#180407}
 .dish-media img,.dish-media video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.dish-media video{background:#180407}
+.dish:hover .dish-media video{transform:scale(1.04)}
+.video-toggle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border:2px solid #fff;border-radius:50%;background:rgba(0,0,0,.48);color:#fff;font-size:21px;display:grid;place-items:center;z-index:2;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.video-toggle.playing{font-size:18px}
+.video-toggle:hover{background:rgba(0,0,0,.68);transform:translate(-50%,-50%) scale(1.05)}
+.feature-video{position:absolute;width:100%;height:100%;inset:0;object-fit:cover}
+
 .dish:hover .dish-media img{transform:scale(1.04)}
 .media-badge{position:absolute;left:12px;top:12px;background:var(--gold);color:#2a0805;padding:6px 10px;border-radius:99px;font-size:10px;font-weight:800;letter-spacing:.5px}
 .dish-body{padding:15px;display:flex;flex-direction:column;flex:1}
@@ -194,12 +201,12 @@ footer small{display:block;letter-spacing:2px;font-size:9px}
 <div class="notice" id="notice" role="status"></div>
 <script>
 const dishes = [
- {id:1,name:"Bruschetta Classica",category:"Starters",price:9.50,desc:"Toasted sourdough, fresh tomatoes, basil, garlic and extra virgin olive oil.",image:"images/bruschetta.jpg",fallback:"https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian","Fresh"],badge:"FRESH PICK"},
- {id:2,name:"Truffle Pasta",category:"Pasta",price:18.90,desc:"Fresh tagliatelle with black truffle, parmesan and a touch of cream.",image:"images/truffle-pasta.jpg",fallback:"https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian option","Contains gluten"],badge:"CHEF'S PICK"},
- {id:3,name:"Margherita Pizza",category:"Pizza",price:14.90,desc:"San Marzano tomato, mozzarella, fresh basil and extra virgin olive oil.",image:"images/margherita.jpg",fallback:"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian"],badge:"WOOD-FIRED"},
- {id:4,name:"Tiramisu",category:"Desserts",price:7.90,desc:"Espresso, mascarpone, cocoa and a touch of love.",image:"images/tiramisu.jpg",fallback:"https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=85",tags:["Contains dairy"],badge:"HOUSE FAVOURITE"},
- {id:5,name:"Ribeye alla Griglia",category:"Mains",price:29.90,desc:"Grilled ribeye, rosemary potatoes and seasonal vegetables.",image:"images/hero-steak.jpg",fallback:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=85",tags:["Gluten-free option"],badge:"SIGNATURE"},
- {id:6,name:"Lemon Spritz",category:"Drinks",price:8.50,desc:"A bright, refreshing citrus spritz with fresh lemon.",image:"images/lemon-spritz.jpg",fallback:"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=85",tags:["Refreshing"],badge:"HOUSE DRINK"}
+ {id:1,name:"Bruschetta Classica",category:"Starters",price:9.50,desc:"Toasted sourdough, fresh tomatoes, basil, garlic and extra virgin olive oil.",image:"images/bruschetta.jpg",video:"videos/bruschetta-classica.mp4",fallback:"https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian","Fresh"],badge:"FRESH PICK"},
+ {id:2,name:"Truffle Pasta",category:"Pasta",price:18.90,desc:"Fresh tagliatelle with black truffle, parmesan and a touch of cream.",image:"images/truffle-pasta.jpg",video:"videos/truffle-pasta.mp4",fallback:"https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian option","Contains gluten"],badge:"CHEF'S PICK"},
+ {id:3,name:"Margherita Pizza",category:"Pizza",price:14.90,desc:"San Marzano tomato, mozzarella, fresh basil and extra virgin olive oil.",image:"images/margherita.jpg",video:"videos/margherita-pizza.mp4",fallback:"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian"],badge:"WOOD-FIRED"},
+ {id:4,name:"Tiramisu",category:"Desserts",price:7.90,desc:"Espresso, mascarpone, cocoa and a touch of love.",image:"images/tiramisu.jpg",video:"videos/tiramisu.mp4",fallback:"https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=85",tags:["Contains dairy"],badge:"HOUSE FAVOURITE"},
+ {id:5,name:"Ribeye alla Griglia",category:"Mains",price:29.90,desc:"Grilled ribeye, rosemary potatoes and seasonal vegetables.",image:"images/hero-steak.jpg",video:"videos/ribeye-alla-griglia.mp4",fallback:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=85",tags:["Gluten-free option"],badge:"SIGNATURE"},
+ {id:6,name:"Lemon Spritz",category:"Drinks",price:8.50,desc:"A bright, refreshing citrus spritz with fresh lemon.",image:"images/lemon-spritz.jpg",video:"videos/lemon-spritz.mp4",fallback:"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=85",tags:["Refreshing"],badge:"HOUSE DRINK"}
 ];
 const cart=[];
 let quantity=1;
@@ -208,9 +215,10 @@ const grid=document.getElementById("menuGrid");
 function renderMenu(filter="All"){
  grid.innerHTML="";
  dishes.filter(d=>filter==="All"||d.category===filter).forEach(d=>{
-  const article=document.createElement("article");article.className="dish";
-  article.innerHTML=`<div class="dish-media"><img src="${d.image}" alt="${d.name}" loading="lazy" onerror="this.onerror=null;this.src='${d.fallback}'"><span class="media-badge">${d.badge}</span></div>
-   <div class="dish-body"><div class="dish-title-row"><h3>${d.name}</h3><span class="price">${money(d.price)}</span></div><p>${d.desc}</p><div class="tags">${d.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div><button class="btn gold small" data-add="${d.id}">View &amp; Order　→</button></div>`;
+  const article=document.createElement("article");article.className="dish";$1`<div class="dish-media">
+      ${d.video ? `<video class="dish-video" muted loop playsinline preload="metadata" poster="${d.image}" data-video="${d.video}" aria-label="${d.name} video"><source src="${d.video}" type="video/mp4"></video><button class="video-toggle" type="button" aria-label="Play ${d.name} video" title="Play video">▶</button>` : `<img src="${d.image}" alt="${d.name}" loading="lazy" onerror="this.onerror=null;this.src='${d.fallback}'">`}
+      <span class="media-badge">${d.badge}</span></div>
+    <div class="dish-body"><div class="dish-title-row"><h3>${d.name}</h3><span class="price">${money(d.price)}</span></div><p>${d.desc}</p><div class="tags">${d.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div><button class="btn gold small" data-add="${d.id}">View &amp; Order　→</button></div>`;
   grid.appendChild(article);
  });
 }
@@ -219,10 +227,29 @@ document.querySelectorAll(".category").forEach(btn=>btn.addEventListener("click"
  document.querySelectorAll(".category").forEach(b=>b.classList.remove("active"));btn.classList.add("active");renderMenu(btn.dataset.filter);
 }));
 grid.addEventListener("click",e=>{
- const btn=e.target.closest("[data-add]");if(!btn)return;
- const d=dishes.find(x=>x.id===Number(btn.dataset.add));
- if(d.id===2){document.getElementById("order").scrollIntoView({behavior:"smooth"});return}
- addToCart(d,[],1);showNotice(d.name+" added to your demo order.");
+  const videoBtn=e.target.closest(".video-toggle");
+  if(videoBtn){
+    const video=videoBtn.closest(".dish-media")?.querySelector(".dish-video");
+    if(!video)return;
+    if(video.paused){
+      video.play().then(()=>{
+        videoBtn.textContent="❚❚";
+        videoBtn.classList.add("playing");
+        videoBtn.setAttribute("aria-label","Pause video");
+      }).catch(()=>showNotice("Tap again to play the dish video."));
+    }else{
+      video.pause();
+      videoBtn.textContent="▶";
+      videoBtn.classList.remove("playing");
+      videoBtn.setAttribute("aria-label","Play video");
+    }
+    return;
+  }
+  const btn=e.target.closest("[data-add]");
+  if(!btn)return;
+  const d=dishes.find(x=>x.id===Number(btn.dataset.add));
+  if(d.id===2){document.getElementById("order").scrollIntoView({behavior:"smooth"});return}
+  addToCart(d,[],1);showNotice(d.name+" added to your demo order.");
 });
 function extras(){return [...document.querySelectorAll("[data-extra]:checked")].map(x=>({name:x.value,price:Number(x.dataset.extra)}))}
 function addToCart(d,opts=[],qty=1){cart.push({name:d.name,price:d.price+opts.reduce((s,x)=>s+x.price,0),qty,options:opts.map(x=>x.name)});updateCart()}
@@ -239,7 +266,26 @@ document.getElementById("openCart").addEventListener("click",()=>{
  const details=cart.map(x=>`${x.qty} × ${x.name}${x.options.length?" ("+x.options.join(", ")+")":""} — ${money(x.price*x.qty)}`).join("\n");
  alert("LA FONTANA — DEMO ORDER\n\n"+details+"\n\nTOTAL: "+money(total)+"\n\nDemo only: connect a secure backend/POS to send real orders.");
 });
-document.getElementById("videoDemo").addEventListener("click",()=>showNotice("Video-ready area: add a dish MP4 in the videos folder when available."));
+document.getElementById("videoDemo").addEventListener("click",()=>{
+  const media=document.getElementById("featureMedia");
+  const image=document.getElementById("featureImage");
+  let video=media.querySelector(".feature-video");
+  if(!video){
+    video=document.createElement("video");
+    video.className="feature-video";
+    video.controls=true;
+    video.playsInline=true;
+    video.autoplay=true;
+    video.poster=image.src;
+    video.innerHTML='<source src="videos/truffle-pasta.mp4" type="video/mp4">';
+    image.style.display="none";
+    media.insertBefore(video,media.firstChild);
+    document.getElementById("videoDemo").style.display="none";
+    video.play().catch(()=>{});
+  }else{
+    video.paused ? video.play() : video.pause();
+  }
+});
 </script>
 </body>
 </html>
