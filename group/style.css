@@ -30,3 +30,107 @@
 .worker-hint{margin-top:11px}
 .print-worker-list{display:grid;gap:4px;font-size:16px;font-weight:700;overflow-wrap:anywhere;white-space:normal}
 @media print{.print-worker-list{font-size:16px;line-height:1.4}.print-worker-list>div{break-inside:avoid}}
+.hero-lines {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0f1720; /* keep your dark block look */
+}
+
+/* First moving line layer */
+.hero-lines::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(201, 184, 153, 0.00) 40.5%,
+      rgba(201, 184, 153, 0.18) 41%,
+      rgba(201, 184, 153, 0.00) 41.6%,
+      transparent 42%,
+      transparent 52%,
+      rgba(201, 184, 153, 0.00) 52.5%,
+      rgba(201, 184, 153, 0.12) 53%,
+      rgba(201, 184, 153, 0.00) 53.5%,
+      transparent 54%,
+      transparent 64%,
+      rgba(201, 184, 153, 0.00) 64.5%,
+      rgba(201, 184, 153, 0.08) 65%,
+      rgba(201, 184, 153, 0.00) 65.5%,
+      transparent 66%,
+      transparent 100%
+    );
+  animation: heroLineMove1 18s linear infinite;
+}
+
+/* Second moving line layer */
+.hero-lines::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 48%,
+      rgba(201, 184, 153, 0.00) 48.4%,
+      rgba(201, 184, 153, 0.10) 48.8%,
+      rgba(201, 184, 153, 0.00) 49.2%,
+      transparent 49.6%,
+      transparent 58%,
+      rgba(201, 184, 153, 0.00) 58.4%,
+      rgba(201, 184, 153, 0.07) 58.8%,
+      rgba(201, 184, 153, 0.00) 59.2%,
+      transparent 59.6%,
+      transparent 100%
+    );
+  animation: heroLineMove2 24s linear infinite;
+}
+
+/* Keep text above animation */
+.hero-lines > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes heroLineMove1 {
+  0% {
+    transform: translateX(-6%) translateY(0);
+  }
+  50% {
+    transform: translateX(4%) translateY(-1%);
+  }
+  100% {
+    transform: translateX(10%) translateY(0);
+  }
+}
+
+@keyframes heroLineMove2 {
+  0% {
+    transform: translateX(8%) translateY(0);
+  }
+  50% {
+    transform: translateX(-3%) translateY(1%);
+  }
+  100% {
+    transform: translateX(-10%) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-lines::before,
+  .hero-lines::after {
+    animation: none;
+  }
+}
+
+3) Remove the logo background effect
