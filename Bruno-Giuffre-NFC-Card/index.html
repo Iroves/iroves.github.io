@@ -2,87 +2,238 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#17325a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Bruno M Giuffre | Diagnostic Radiologist</title>
+
 <style>
 *{box-sizing:border-box}
-:root{--navy:#17325a;--blue:#1d477e;--gold:#c9a13b;--text:#17325a;--muted:#53647a}
-html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif}
+:root{
+  --navy:#17325a;
+  --blue:#1d477e;
+  --gold:#c9a13b;
+  --text:#17325a;
+  --muted:#53647a;
+  --card-width:520px;
+  --card-radius:28px;
+  --page-background:#edf1f6;
+  --profile-size:128px;
+}
+html,body{
+  margin:0;
+  min-height:100%;
+  font-family:Arial,Helvetica,sans-serif;
+}
 body{
   color:var(--text);
-  background:#edf1f6 url("background.jpg") center top/cover fixed no-repeat;
+  background-color:var(--page-background);
+  background-image:url("background.jpg");
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
 }
-.wrap{width:100%;max-width:520px;margin:auto;padding:18px 14px 30px}
+.wrap{
+  width:100%;
+  max-width:var(--card-width);
+  margin:auto;
+  padding:18px 14px 30px;
+}
 .card{
-  overflow:hidden;background:rgba(255,255,255,.94);
-  border:1px solid rgba(23,50,90,.12);border-radius:28px;
+  overflow:hidden;
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(23,50,90,.12);
+  border-radius:var(--card-radius);
   box-shadow:0 18px 55px rgba(15,34,60,.22);
 }
 .hero{
   position:relative;
   padding:30px 22px 22px;
   text-align:center;
-  background:
-    linear-gradient(rgba(23,50,90,.45),rgba(29,71,126,.65)),
-    url("hero.jpg") center/cover no-repeat;
   color:white;
+  overflow:hidden;
+  background:linear-gradient(180deg,rgba(23,50,90,.97),rgba(29,71,126,.94));
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  display:none;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(23,50,90,.48),rgba(29,71,126,.68));
+  z-index:1;
+  display:none;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
 }
 .profile{
-  width:128px;height:128px;border-radius:50%;object-fit:cover;
-  display:block;margin:0 auto 14px;
-  border:5px solid white;box-shadow:0 10px 30px rgba(0,0,0,.25);
+  width:var(--profile-size);
+  height:var(--profile-size);
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 14px;
+  border:5px solid white;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
-h1{font-family:Georgia,"Times New Roman",serif;font-size:29px;margin:0 0 7px;line-height:1.1}
-.credentials{font-family:Georgia,"Times New Roman",serif;font-size:14px;letter-spacing:2px}
-.role{margin-top:8px;font-family:Georgia,"Times New Roman",serif;font-size:18px}
+.profile-placeholder{
+  width:var(--profile-size);
+  height:var(--profile-size);
+  border-radius:50%;
+  margin:0 auto 14px;
+  background:rgba(255,255,255,.18);
+  border:5px solid white;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  color:white;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:29px;
+  margin:0 0 7px;
+  line-height:1.1;
+}
+.credentials{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:14px;
+  letter-spacing:2px;
+}
+.role{
+  margin-top:8px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+}
 .logos{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;
-  padding:18px 20px 10px;background:#fff;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  align-items:center;
+  padding:18px 20px 10px;
+  background:#fff;
 }
 .logo{
-  width:100%;height:105px;object-fit:contain;background:#fff;
+  width:100%;
+  height:105px;
+  object-fit:contain;
+  background:#fff;
 }
-.rule{height:1px;background:#c6cfdb;margin:0 24px}
-.info{padding:20px 25px 12px}
-.address{font-size:16px;line-height:1.5;margin-bottom:18px}
-.contact{display:grid;gap:9px}
+.rule{
+  height:1px;
+  background:#c6cfdb;
+  margin:0 24px;
+}
+.info{
+  padding:20px 25px 12px;
+}
+.address{
+  font-size:16px;
+  line-height:1.5;
+  margin-bottom:18px;
+}
+.contact{
+  display:grid;
+  gap:9px;
+}
 .contact a{
-  display:grid;grid-template-columns:108px 1fr;gap:8px;
-  text-decoration:none;color:var(--text);font-size:15px;line-height:1.35;
+  display:grid;
+  grid-template-columns:108px 1fr;
+  gap:8px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:15px;
+  line-height:1.35;
 }
 .label{font-weight:700}
-.actions{padding:10px 22px 22px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.actions{
+  padding:10px 22px 22px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
 .action{
-  min-height:52px;border-radius:14px;text-decoration:none;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;border:1px solid #d6deea;color:var(--text);
+  min-height:52px;
+  border-radius:14px;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  border:1px solid #d6deea;
+  color:var(--text);
   background:#f7f9fc;
 }
-.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
-.save{
-  width:calc(100% - 44px);margin:0 22px 12px;padding:15px;
-  border:0;border-radius:14px;background:var(--gold);color:#13294a;
-  font-weight:800;font-size:15px;cursor:pointer;
+.primary{
+  background:var(--navy);
+  color:#fff;
+  border-color:var(--navy);
 }
-.small{text-align:center;color:#78869a;font-size:11px;padding:0 20px 22px}
+.save{
+  width:calc(100% - 44px);
+  margin:0 22px 12px;
+  padding:15px;
+  border:0;
+  border-radius:14px;
+  background:var(--gold);
+  color:#13294a;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
+}
+.small{
+  text-align:center;
+  color:#78869a;
+  font-size:11px;
+  padding:0 20px 22px;
+}
 @media(max-width:370px){
-  .logos{grid-template-columns:1fr}.logo{height:90px}
+  .wrap{padding:10px 8px 20px}
+  .logos{grid-template-columns:1fr}
+  .logo{height:90px}
   .contact a{grid-template-columns:92px 1fr}
   .actions{grid-template-columns:1fr}
+  h1{font-size:26px}
+}
+@media(max-width:330px){
+  .hero{padding-left:16px;padding-right:16px}
+  .info{padding-left:18px;padding-right:18px}
+  .actions{padding-left:16px;padding-right:16px}
+  .save{
+    width:calc(100% - 32px);
+    margin-left:16px;
+    margin-right:16px;
+  }
 }
 </style>
 </head>
+
 <body>
 <main class="wrap">
 <section class="card">
 
 <header class="hero">
-  <img class="profile" src="profile.jpg" alt="Bruno M Giuffre">
-  <h1>Bruno M Giuffre</h1>
-  <div class="credentials">M.B.B.S., F.R.A.N.Z.C.R.</div>
-  <div class="role">Diagnostic Radiologist</div>
+  <img id="heroBackground" class="hero-bg" src="hero.jpg" alt="">
+  <div id="heroOverlay" class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <img id="profilePhoto" class="profile" src="profile.jpg" alt="Bruno M Giuffre">
+    <div id="profilePlaceholder" class="profile-placeholder">👤</div>
+
+    <h1>Bruno M Giuffre</h1>
+    <div class="credentials">M.B.B.S., F.R.A.N.Z.C.R.</div>
+    <div class="role">Diagnostic Radiologist</div>
+  </div>
 </header>
 
 <div class="logos">
@@ -123,9 +274,86 @@ h1{font-family:Georgia,"Times New Roman",serif;font-size:29px;margin:0 0 7px;lin
 </main>
 
 <script>
+/* =========================================================
+   EASY CLIENT DESIGN SETTINGS
+   =========================================================
+   heroMode:
+     "blue"  = blue hero, no hero photo
+     "photo" = hero.jpg fills the hero
+     "tint"  = hero.jpg + blue overlay
+
+   If hero.jpg is missing, the hero automatically stays blue.
+
+   showProfilePhoto:
+     true  = show profile.jpg
+     false = hide portrait
+
+   useWallpaper:
+     true  = use optional background.jpg
+     false = plain background
+   ========================================================= */
+
+const CARD_SETTINGS = {
+  heroMode: "tint",
+  showProfilePhoto: true,
+  useWallpaper: true
+};
+
+
+/* HERO IMAGE */
+
+const heroImage = document.getElementById("heroBackground");
+const heroOverlay = document.getElementById("heroOverlay");
+
+if (
+  CARD_SETTINGS.heroMode === "photo" ||
+  CARD_SETTINGS.heroMode === "tint"
+) {
+  heroImage.addEventListener("load", function(){
+    heroImage.style.display = "block";
+
+    if(CARD_SETTINGS.heroMode === "tint"){
+      heroOverlay.style.display = "block";
+    }
+  });
+
+  heroImage.addEventListener("error", function(){
+    heroImage.style.display = "none";
+    heroOverlay.style.display = "none";
+  });
+}
+
+
+/* PROFILE IMAGE */
+
+const profile = document.getElementById("profilePhoto");
+const profilePlaceholder = document.getElementById("profilePlaceholder");
+
+if(!CARD_SETTINGS.showProfilePhoto){
+  profile.style.display = "none";
+  profilePlaceholder.style.display = "none";
+}else{
+  profile.addEventListener("error", function(){
+    profile.style.display = "none";
+    profilePlaceholder.style.display = "flex";
+  });
+}
+
+
+/* WALLPAPER */
+
+if(!CARD_SETTINGS.useWallpaper){
+  document.body.style.backgroundImage = "none";
+}
+
+
+/* SAVE CONTACT */
+
 document.getElementById("save").addEventListener("click",function(){
-  const vcard=[
-    "BEGIN:VCARD","VERSION:3.0",
+
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
     "FN:Bruno M Giuffre",
     "N:Giuffre;Bruno M;;;",
     "TITLE:Diagnostic Radiologist",
@@ -136,14 +364,29 @@ document.getElementById("save").addEventListener("click",function(){
     "EMAIL;TYPE=INTERNET:bruno.giuffre@health.nsw.gov.au",
     "ADR;TYPE=WORK:;;Level 2, Main Building, Royal North Shore Hospital;St Leonards;NSW;2065;Australia",
     "END:VCARD"
-  ].join("\\r\\n");
-  const blob=new Blob([vcard],{type:"text/vcard;charset=utf-8"});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=url;a.download="Bruno-M-Giuffre.vcf";
-  document.body.appendChild(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  ].join("\r\n");
+
+  const blob = new Blob(
+    [vcard],
+    {type:"text/vcard;charset=utf-8"}
+  );
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  a.href = url;
+  a.download = "Bruno-M-Giuffre.vcf";
+
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  setTimeout(
+    ()=>URL.revokeObjectURL(url),
+    1000
+  );
 });
 </script>
+
 </body>
 </html>
