@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#170b35">
+  <meta name="description" content="An elegant, animated digital business card. Tap to call, email, or save this contact.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Digital Business Card">
+  <meta property="og:description" content="Connect in a tap.">
+  <meta property="og:image" content="assets/avatar.webp">
+  <title>Digital Business Card</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/avatar.webp">
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contacts">Skip to contact information</a>
+
+  <!-- MOVING BACKGROUND: replace this video and poster in assets/ for any client. -->
+  <div class="scene" aria-hidden="true">
+    <video id="backgroundVideo" class="background-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/neon-poster.jpg">
+      <source src="assets/neon-motion.mp4" type="video/mp4">
+    </video>
+    <div class="scene-darken"></div>
+    <div class="scene-bloom"></div>
+    <div class="scene-grain"></div>
+  </div>
+
+  <!-- Inline icons = no icon websites, libraries, or network requests needed. -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3.1a2 2 0 0 1-.6 1.8L7.2 10a16 16 0 0 0 6.8 6.8l1.4-1.8a2 2 0 0 1 1.8-.6l3.1.5a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+    <symbol id="icon-fax" viewBox="0 0 24 24"><path d="M6 8V2h12v6M6 18H4a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2M6 14h12v8H6zM17 11h2"/></symbol>
+    <symbol id="icon-save" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="icon-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="5" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8 11 7-5M8 13l7 5"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-sparkle" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></symbol>
+  </svg>
+
+  <main class="page">
+    <article class="profile-card" aria-label="Digital business card">
+      <div class="topline">
+        <span class="overline"><span class="light-dot"></span><span id="cardBrand">DIGITAL BUSINESS CARD</span></span>
+        <span class="nfc-sign" title="NFC enabled">NFC <span class="nfc-waves">)))</span></span>
+      </div>
+
+      <header class="profile-head">
+        <div class="avatar-halo">
+          <img id="avatar" class="avatar" src="assets/avatar.webp" alt="Profile photo" width="156" height="156">
+        </div>
+        <div class="headline">
+          <div class="intro-line"><svg class="svg-icon" aria-hidden="true"><use href="#icon-sparkle"></use></svg><span id="introText">NICE TO MEET YOU</span></div>
+          <h1 id="fullName">Alex Morgan</h1>
+          <p class="credentials" id="credentials" hidden></p>
+          <p class="job-title" id="jobTitle">Creative Director</p>
+          <p class="organization" id="organization">Nova Studio</p>
+          <p class="bio" id="bio">Creating meaningful connections, one tap at a time.</p>
+        </div>
+      </header>
+
+      <div class="shine-divider"></div>
+
+      <section class="cta-section" aria-label="Quick actions">
+        <a class="cta cta-call" id="callButton" href="tel:+61400000000">
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Call</span>
+        </a>
+        <a class="cta cta-email" id="emailButton" href="mailto:alex@example.com">
+          <svg class="svg-icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>Email</span>
+        </a>
+      </section>
+
+      <section class="details-section" id="contacts">
+        <div class="section-head"><h2>Contact details</h2><span class="section-line"></span></div>
+        <div id="contactList" class="contact-list"><!-- populated automatically from config.js --></div>
+      </section>
+
+      <div id="socialSection" class="social-section" hidden>
+        <div class="section-head"><h2>Find me online</h2><span class="section-line"></span></div>
+        <div id="socialList" class="social-list"></div>
+      </div>
+
+      <button class="save-button" id="saveContact" type="button">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-save"></use></svg>
+        <span>Save to Contacts</span>
+        <svg class="svg-icon button-end-icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+      </button>
+      <button class="share-button" id="shareCard" type="button">
+        <svg class="svg-icon" aria-hidden="true"><use href="#icon-share"></use></svg>
+        <span>Share this card</span>
+      </button>
+
+      <footer class="footer"><span class="footer-mark">✦</span> <span id="footerLabel">Tap. Connect. Remember.</span></footer>
+    </article>
+    <p class="page-footnote">A digital connection, made simple.</p>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
