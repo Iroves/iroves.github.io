@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#31060b">
+<meta name="description" content="La Fontana Ristorante & Pizzeria — an immersive video-ready restaurant menu.">
+<title>La Fontana | Digital Menu</title>
+<style>
+:root{
+  --wine:#30060b;--wine2:#4b0911;--wine3:#67111a;--gold:#ffc629;
+  --gold2:#e9a91b;--cream:#fff2dc;--muted:#d8c3ad;--line:rgba(255,198,41,.24);
+  --panel:rgba(45,5,10,.88);--radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--wine);color:var(--cream);font-family:Arial,Helvetica,sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.hero{
+  min-height:410px;position:relative;overflow:hidden;isolation:isolate;
+  display:grid;grid-template-columns:minmax(280px,.85fr) 1.15fr;
+  background:radial-gradient(ellipse at 20% 0%,#70151b 0%,var(--wine) 62%);
+  border-bottom:1px solid var(--line)
+}
+.hero-copy{padding:44px clamp(24px,6vw,88px);z-index:2;display:flex;flex-direction:column;justify-content:center}
+.brand-mark{font-family:Georgia,serif;font-size:clamp(46px,6vw,82px);line-height:.95;letter-spacing:-3px;color:var(--gold)}
+.flame{font-size:34px;display:block;letter-spacing:0;margin-left:110px;margin-bottom:5px}
+.brand-sub{font-size:11px;letter-spacing:4px;margin:14px 0 24px}
+.tagline{font-family:Georgia,serif;font-style:italic;color:#f2d68a;font-size:clamp(20px,2.4vw,27px);line-height:1.3;max-width:340px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.hero-media{position:relative;min-height:330px;overflow:hidden}
+.hero-media img,.hero-media video{position:absolute;width:100%;height:100%;inset:0;object-fit:cover}
+.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--wine) 0%,rgba(48,6,11,.08) 35%,rgba(48,6,11,.05) 70%,rgba(48,6,11,.45) 100%)}
+.hero-media .quote{position:absolute;z-index:1;right:7%;top:34%;font-family:Georgia,serif;font-style:italic;color:var(--gold);font-size:22px;max-width:150px;transform:rotate(-7deg)}
+.btn{border:1px solid var(--gold);border-radius:999px;padding:12px 19px;background:transparent;color:var(--cream);font-weight:700;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:#281006;border-color:var(--gold)}
+.btn.small{padding:9px 13px;font-size:13px}
+.topline{display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:14px clamp(20px,5vw,70px);position:absolute;top:0;right:0;z-index:3}
+.pill{border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:rgba(30,0,3,.55);font-size:13px}
+.category-bar{display:flex;justify-content:center;gap:0;overflow-x:auto;padding:15px 12px;background:rgba(20,0,3,.65);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(14px)}
+.category{border:0;border-right:1px solid rgba(255,255,255,.1);background:transparent;color:var(--cream);min-width:100px;padding:10px 19px;font-size:14px}
+.category span{display:block;font-size:23px;margin-bottom:5px}
+.category.active{background:var(--gold);color:#2b0906;border-radius:16px;font-weight:700}
+.section{padding:40px clamp(16px,5vw,70px);max-width:1500px;margin:auto}
+.section-heading{text-align:center;margin-bottom:26px}
+.eyebrow{font-family:Georgia,serif;font-style:italic;color:var(--gold);font-size:21px}
+h2{font:700 clamp(30px,4vw,44px)/1.05 Georgia,serif;margin:4px 0 10px}
+.subheading{color:var(--muted);font-family:Georgia,serif;font-style:italic}
+.menu-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.dish{background:linear-gradient(150deg,rgba(111,18,27,.4),rgba(25,0,4,.9));border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.22s;display:flex;flex-direction:column;min-width:0}
+.dish:hover{transform:translateY(-4px);border-color:var(--gold)}
+.dish-media{position:relative;aspect-ratio:1.22/1;overflow:hidden;background:#180407}
+.dish-media img,.dish-media video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.dish:hover .dish-media img{transform:scale(1.04)}
+.media-badge{position:absolute;left:12px;top:12px;background:var(--gold);color:#2a0805;padding:6px 10px;border-radius:99px;font-size:10px;font-weight:800;letter-spacing:.5px}
+.dish-body{padding:15px;display:flex;flex-direction:column;flex:1}
+.dish-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.dish h3{font:700 20px Georgia,serif;margin:0 0 8px}
+.price{color:var(--gold);font-weight:800;white-space:nowrap}
+.dish p{font-size:13px;line-height:1.5;color:#e3d1c3;margin:0 0 14px;flex:1}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+.tag{font-size:10px;border:1px solid rgba(255,255,255,.17);border-radius:99px;padding:5px 7px;color:#e5d5c4}
+.featured{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:20px;align-items:stretch}
+.feature-media{position:relative;min-height:370px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#190307}
+.feature-media img,.feature-media video{position:absolute;width:100%;height:100%;inset:0;object-fit:cover}
+.feature-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(19,0,3,.65),transparent 55%);display:flex;align-items:flex-end;padding:24px}
+.play{width:68px;height:68px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.4);color:white;font-size:25px;display:grid;place-items:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.feature-card{border:1px solid var(--line);border-radius:20px;padding:25px;background:linear-gradient(140deg,rgba(100,14,23,.65),rgba(30,2,6,.92))}
+.feature-card h3{font:700 30px Georgia,serif;margin:7px 0}
+.feature-card p{color:#e6d5c7;line-height:1.6}
+.option-list{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0}
+.option{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px}
+.option:last-child{border-bottom:0}
+.option input{accent-color:var(--gold);width:17px;height:17px}
+.order-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.qty{display:flex;align-items:center;border:1px solid var(--gold);border-radius:99px;overflow:hidden}
+.qty button{background:transparent;border:0;color:var(--cream);padding:10px 15px;font-size:18px}
+.qty span{min-width:24px;text-align:center}
+.order-row .btn.gold{flex:1}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px 0}
+.feature-item .icon{width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:22px;margin:0 auto 10px}
+.feature-item strong{font-family:Georgia,serif;display:block;margin-bottom:6px}
+.feature-item small{color:var(--muted);line-height:1.4}
+footer{background:linear-gradient(100deg,#f9b62b,#ffd765);color:#2a0905;padding:28px clamp(20px,5vw,70px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.footer-brand{font:700 34px Georgia,serif}
+footer small{display:block;letter-spacing:2px;font-size:9px}
+.footer-detail{font-size:13px;line-height:1.9}
+.footer-script{font:italic 26px Georgia,serif}
+.cart-fab{position:fixed;bottom:18px;right:18px;z-index:20;box-shadow:0 8px 30px #0008}
+.cart-count{display:inline-grid;place-items:center;background:var(--wine);color:var(--gold);border-radius:50%;width:22px;height:22px;margin-left:6px;font-size:12px}
+.notice{position:fixed;bottom:84px;right:18px;z-index:25;background:#fff2dc;color:#2a0905;padding:14px 18px;border-radius:12px;box-shadow:0 8px 30px #0008;max-width:320px;display:none}
+.notice.show{display:block}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-copy{padding-top:70px;padding-bottom:28px}.hero-media{min-height:280px}.hero-media:after{background:linear-gradient(0deg,rgba(48,6,11,.1),rgba(48,6,11,.2))}.hero-media .quote{display:none}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured{grid-template-columns:1fr}.feature-media{min-height:300px}}
+@media(max-width:520px){.topline{padding:10px;gap:6px}.pill{padding:8px;font-size:11px}.hero-copy{padding-left:22px;padding-right:22px}.brand-mark{font-size:56px}.brand-sub{letter-spacing:2px}.category{min-width:80px;padding:8px 12px;font-size:12px}.section{padding:30px 14px}.menu-grid{gap:10px}.dish-body{padding:11px}.dish h3{font-size:17px}.price{font-size:13px}.dish p{font-size:12px}.tags{display:none}.dish .btn{font-size:11px;padding:9px 7px}.features{grid-template-columns:repeat(2,1fr)}.feature-card{padding:18px}.feature-media{min-height:250px}footer{gap:12px}.footer-script{font-size:21px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="topline">
+    <span class="pill">◎ EN ▾</span>
+    <span class="pill" id="tableLabel">♧ Table 12</span>
+  </div>
+  <div class="hero-copy">
+    <span class="flame">♨</span>
+    <div class="brand-mark">La Fontana</div>
+    <div class="brand-sub">RISTORANTE &amp; PIZZERIA</div>
+    <div class="tagline">Authentic flavours.<br>Unforgettable moments.</div>
+    <div class="hero-actions">
+      <a class="btn gold" href="#menu">Explore Menu ↓</a>
+      <a class="btn" href="#order">Our Speciality</a>
+    </div>
+  </div>
+  <div class="hero-media" id="heroMedia">
+    <img src="images/hero-steak.jpg" alt="Chef's signature steak with roasted vegetables" onerror="this.src='https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1400&q=85'">
+    <!-- Optional video: replace the hero image with <video autoplay muted loop playsinline poster="images/hero-steak.jpg"><source src="videos/hero.mp4" type="video/mp4"></video> -->
+    <div class="quote">Good Food<br>Brings People<br>Together</div>
+  </div>
+</header>
+
+<nav class="category-bar" aria-label="Menu categories">
+  <button class="category active" data-filter="All"><span>♨</span>All</button>
+  <button class="category" data-filter="Starters"><span>❧</span>Starters</button>
+  <button class="category" data-filter="Pasta"><span>♨</span>Pasta</button>
+  <button class="category" data-filter="Pizza"><span>◈</span>Pizza</button>
+  <button class="category" data-filter="Mains"><span>♨</span>Main Courses</button>
+  <button class="category" data-filter="Desserts"><span>♧</span>Desserts</button>
+  <button class="category" data-filter="Drinks"><span>♢</span>Drinks</button>
+</nav>
+
+<main>
+<section class="section" id="menu">
+  <div class="section-heading">
+    <div class="eyebrow">Our Specialities</div>
+    <h2>Signature Dishes</h2>
+    <div class="subheading">Fresh ingredients <span style="color:var(--gold)">　•　</span> Traditional recipes <span style="color:var(--gold)">　•　</span> Made with passion</div>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<section class="section" id="order">
+  <div class="section-heading">
+    <div class="eyebrow">Made for you</div>
+    <h2>Choose. Customise. Enjoy.</h2>
+    <div class="subheading">Your favourite dish, just the way you like it.</div>
+  </div>
+  <div class="featured">
+    <div class="feature-media" id="featureMedia">
+      <img id="featureImage" src="images/truffle-pasta.jpg" alt="Fresh truffle tagliatelle" onerror="this.src='https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=85'">
+      <!-- Optional video for this dish: <video controls playsinline poster="images/truffle-pasta.jpg"><source src="videos/truffle-pasta.mp4" type="video/mp4"></video> -->
+      <div class="feature-overlay"><span class="pill">✦ SIGNATURE PICK</span></div>
+      <button class="play" id="videoDemo" aria-label="Preview dish video" title="Demo video placeholder">▶</button>
+    </div>
+    <div class="feature-card">
+      <div class="eyebrow" style="font-size:14px">♨　PASTA</div>
+      <div class="dish-title-row"><h3 id="featureTitle">Truffle Pasta</h3><span class="price" id="featurePrice">$18.90</span></div>
+      <p id="featureDescription">Fresh tagliatelle with black truffle, parmesan and a touch of cream. A true Italian classic, made with the finest ingredients.</p>
+      <div class="tags"><span class="tag">♧ Vegetarian option</span><span class="tag">Contains gluten</span><span class="tag">Mild</span></div>
+      <strong style="color:var(--gold)">Customise your dish</strong>
+      <div class="option-list">
+        <label class="option"><span>Extra truffle</span><span>+$3.00　<input type="checkbox" data-extra="3" value="Extra truffle"></span></label>
+        <label class="option"><span>Grilled chicken</span><span>+$4.00　<input type="checkbox" data-extra="4" value="Grilled chicken"></span></label>
+        <label class="option"><span>Gluten-free pasta</span><span>+$2.00　<input type="checkbox" data-extra="2" value="Gluten-free pasta"></span></label>
+      </div>
+      <div class="order-row">
+        <div class="qty"><button id="minus" aria-label="Decrease quantity">−</button><span id="quantity">1</span><button id="plus" aria-label="Increase quantity">+</button></div>
+        <button class="btn gold" id="addFeatured">🛒 Add to Order · <span id="featureTotal">$18.90</span></button>
+      </div>
+      <p style="font-size:11px;margin-bottom:0;color:var(--muted)">Demo menu: prices and orders are illustrative. No real order is sent.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="features">
+    <div class="feature-item"><div class="icon">❧</div><strong>Fresh Ingredients</strong><small>Locally sourced, always fresh.</small></div>
+    <div class="feature-item"><div class="icon">♨</div><strong>Authentic Recipes</strong><small>Traditional Italian cuisine.</small></div>
+    <div class="feature-item"><div class="icon">♡</div><strong>Great Atmosphere</strong><small>Perfect for any occasion.</small></div>
+    <div class="feature-item"><div class="icon">▦</div><strong>Scan for Our Story</strong><small>Discover our journey and values.</small></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div><div class="footer-brand">♨ La Fontana</div><small>RISTORANTE &amp; PIZZERIA</small></div>
+  <div class="footer-detail">⌖　123 Ocean View Road, Porto Santo<br>☎　+351 291 123 456<br>✉　info@lafontana.pt</div>
+  <div class="footer-detail">◉　Instagram　　◉　Facebook<br>Open daily · 12:00–22:00</div>
+  <div class="footer-script">Buon Appetito!</div>
+</footer>
+
+<button class="btn gold cart-fab" id="openCart">🛒 Your Order <span class="cart-count" id="cartCount">0</span></button>
+<div class="notice" id="notice" role="status"></div>
+<script>
+const dishes = [
+ {id:1,name:"Bruschetta Classica",category:"Starters",price:9.50,desc:"Toasted sourdough, fresh tomatoes, basil, garlic and extra virgin olive oil.",image:"images/bruschetta.jpg",fallback:"https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian","Fresh"],badge:"FRESH PICK"},
+ {id:2,name:"Truffle Pasta",category:"Pasta",price:18.90,desc:"Fresh tagliatelle with black truffle, parmesan and a touch of cream.",image:"images/truffle-pasta.jpg",fallback:"https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian option","Contains gluten"],badge:"CHEF'S PICK"},
+ {id:3,name:"Margherita Pizza",category:"Pizza",price:14.90,desc:"San Marzano tomato, mozzarella, fresh basil and extra virgin olive oil.",image:"images/margherita.jpg",fallback:"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=85",tags:["Vegetarian"],badge:"WOOD-FIRED"},
+ {id:4,name:"Tiramisu",category:"Desserts",price:7.90,desc:"Espresso, mascarpone, cocoa and a touch of love.",image:"images/tiramisu.jpg",fallback:"https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=85",tags:["Contains dairy"],badge:"HOUSE FAVOURITE"},
+ {id:5,name:"Ribeye alla Griglia",category:"Mains",price:29.90,desc:"Grilled ribeye, rosemary potatoes and seasonal vegetables.",image:"images/hero-steak.jpg",fallback:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=85",tags:["Gluten-free option"],badge:"SIGNATURE"},
+ {id:6,name:"Lemon Spritz",category:"Drinks",price:8.50,desc:"A bright, refreshing citrus spritz with fresh lemon.",image:"images/lemon-spritz.jpg",fallback:"https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=85",tags:["Refreshing"],badge:"HOUSE DRINK"}
+];
+const cart=[];
+let quantity=1;
+const money=n=>"$"+n.toFixed(2);
+const grid=document.getElementById("menuGrid");
+function renderMenu(filter="All"){
+ grid.innerHTML="";
+ dishes.filter(d=>filter==="All"||d.category===filter).forEach(d=>{
+  const article=document.createElement("article");article.className="dish";
+  article.innerHTML=`<div class="dish-media"><img src="${d.image}" alt="${d.name}" loading="lazy" onerror="this.onerror=null;this.src='${d.fallback}'"><span class="media-badge">${d.badge}</span></div>
+   <div class="dish-body"><div class="dish-title-row"><h3>${d.name}</h3><span class="price">${money(d.price)}</span></div><p>${d.desc}</p><div class="tags">${d.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div><button class="btn gold small" data-add="${d.id}">View &amp; Order　→</button></div>`;
+  grid.appendChild(article);
+ });
+}
+renderMenu();
+document.querySelectorAll(".category").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".category").forEach(b=>b.classList.remove("active"));btn.classList.add("active");renderMenu(btn.dataset.filter);
+}));
+grid.addEventListener("click",e=>{
+ const btn=e.target.closest("[data-add]");if(!btn)return;
+ const d=dishes.find(x=>x.id===Number(btn.dataset.add));
+ if(d.id===2){document.getElementById("order").scrollIntoView({behavior:"smooth"});return}
+ addToCart(d,[],1);showNotice(d.name+" added to your demo order.");
+});
+function extras(){return [...document.querySelectorAll("[data-extra]:checked")].map(x=>({name:x.value,price:Number(x.dataset.extra)}))}
+function addToCart(d,opts=[],qty=1){cart.push({name:d.name,price:d.price+opts.reduce((s,x)=>s+x.price,0),qty,options:opts.map(x=>x.name)});updateCart()}
+function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0)}
+function showNotice(msg){const n=document.getElementById("notice");n.textContent=msg;n.classList.add("show");setTimeout(()=>n.classList.remove("show"),3500)}
+function updateFeatureTotal(){const total=(18.9+extras().reduce((s,x)=>s+x.price,0))*quantity;document.getElementById("featureTotal").textContent=money(total)}
+document.querySelectorAll("[data-extra]").forEach(x=>x.addEventListener("change",updateFeatureTotal));
+document.getElementById("minus").addEventListener("click",()=>{quantity=Math.max(1,quantity-1);document.getElementById("quantity").textContent=quantity;updateFeatureTotal()});
+document.getElementById("plus").addEventListener("click",()=>{quantity=Math.min(20,quantity+1);document.getElementById("quantity").textContent=quantity;updateFeatureTotal()});
+document.getElementById("addFeatured").addEventListener("click",()=>{addToCart(dishes.find(d=>d.id===2),extras(),quantity);showNotice("Truffle Pasta added. Open Your Order to review it.")});
+document.getElementById("openCart").addEventListener("click",()=>{
+ if(!cart.length){showNotice("Your order is empty. Choose a dish to get started.");return}
+ const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+ const details=cart.map(x=>`${x.qty} × ${x.name}${x.options.length?" ("+x.options.join(", ")+")":""} — ${money(x.price*x.qty)}`).join("\n");
+ alert("LA FONTANA — DEMO ORDER\n\n"+details+"\n\nTOTAL: "+money(total)+"\n\nDemo only: connect a secure backend/POS to send real orders.");
+});
+document.getElementById("videoDemo").addEventListener("click",()=>showNotice("Video-ready area: add a dish MP4 in the videos folder when available."));
+</script>
+</body>
+</html>
