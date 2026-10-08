@@ -2,7 +2,7 @@
 
 **NEW DESIGN: no NFC, no clock-in/out, no accounts or backend required.**
 
-Workers open a single webpage after their shift, enter the job location, date, start and finish times, unpaid break, and an optional note. The website calculates paid hours automatically. The supervisor enters their name and signs directly on the worker's phone with a finger or stylus. The worker then shares a signed PNG image to their WhatsApp work group, or downloads an image / saves the timesheet as a PDF.
+Workers open a single webpage after their shift, enter the job location, date, start and finish times, unpaid break, and an optional note. The website calculates paid hours automatically. The supervisor enters their name and signs directly on the worker's phone with a finger or stylus. The worker then shares a signed PNG image to their WhatsApp work group, or previews and saves their signed image using their phone's built-in Share/Save controls, or saves the timesheet as a PDF.
 
 ## Files
 
@@ -31,7 +31,8 @@ README.md
 3. Add an optional **message / comment** (up to 650 characters).
 4. Ask the supervisor to enter their full name and draw their signature using the worker's device.
 5. Tap **Share to WhatsApp**. On supported phones, a share menu opens: choose **WhatsApp > your work group**. The worker must manually choose the group and press send. If the phone/browser cannot share an image file, the website downloads it as a PNG so the worker can attach it manually.
-6. Alternatively, select **Download signed image**, or **Print / Save as PDF**.
+6. Alternatively, select **Save signed photo** to see a preview of the completed signed image. On iPhone, tap **Save to Photos / Share** and choose **Save Image** (when offered), or touch and hold the image to save it to Photos. On Android, use the share menu or the **Download PNG** button; downloads may appear in Files / Downloads rather than Gallery.
+7. The photo preview also has **Download PNG**, which generates a standard image file. If the browser does not display it in Photos automatically, save from the preview using the device's own controls. **Print / Save as PDF** is unchanged.
 
 ## Important limitations
 
@@ -50,3 +51,15 @@ README.md
 - The image generator is in `app.js` → `makeImage`.
 
 No installation, database, Google Apps Script or paid service is required. Works as a static website on GitHub Pages.
+
+## Photo-saving fix — v2 (October 2026)
+
+The old download button made an `a.download` link from a canvas data URL. Browsers, especially Safari on iPhone, don't reliably put that file in the Photos library. It could seem that nothing happened. The new flow opens an actual PNG photo preview, then has a separate user-initiated Save to Photos / Share button. This lets the mobile browser show its native file-sharing sheet when supported. A direct PNG download remains available, and on iPhones the photo can be long-pressed to save.
+
+**There is no browser API that silently writes a website image into the Photos album.** Workers must confirm Save Image / Photos themselves.
+
+### Update an existing GitHub Pages website
+
+Replace your existing **`app.js` and `index.html` in the root of the repo**, leaving `style.css` and everything else intact. The updated HTML says “Save signed photo” and uses `app.js?v=2` to refresh cached JavaScript. Both files are included in this ZIP. For a single-file patch, replacing only `app.js` also adds the preview, but the old button wording may remain and phones may use their cached old version.
+
+Do not upload a ZIP file directly to GitHub Pages; upload the extracted files. GitHub Pages can take a minute to publish the updated assets. Test on a phone after deployment, preferably with a completed sample timesheet and supervisor signature.

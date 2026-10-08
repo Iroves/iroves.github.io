@@ -247,13 +247,126 @@
     link.href = url; link.download = name;
     document.body.appendChild(link); link.click(); link.remove();
   }
+  // iOS Safari often ignores an <a download> request for an image, or puts it in
+  // Files/Downloads rather than the Photos album. Instead, keep a real image
+  // preview on screen, with an intentional second tap for native file sharing.
+  // This avoids losing the user gesture required by navigator.share after canvas
+  // conversion and also enables long-press > Save Image on iPhones.
+  let previewUrl = '';
+  let previewFile = null;
+  let previewName = '';
+  let previewPreviousFocus = null;
+  const previewCss = document.createElement('style');
+  previewCss.textContent = `
+    .gl-photo-preview[hidden]{display:none!important}
+    .gl-photo-preview{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));background:rgba(12,14,12,.86);backdrop-filter:blur(9px)}
+    .gl-photo-panel{background:#f7f5ef;color:#1b211e;border-radius:19px;width:min(100%,590px);max-height:96dvh;min-height:0;overflow-y:auto;padding:17px;box-shadow:0 30px 90px #0007}
+    .gl-photo-top{display:flex;align-items:flex-start;gap:12px;justify-content:space-between}
+    .gl-photo-top h2{font-size:21px;margin:0 0 4px;color:#1d221d}
+    .gl-photo-top p{font-size:12px;color:#666a61;line-height:1.5;margin:0 0 12px}
+    .gl-photo-close{background:#e5ded3;color:#262c26;border:0;border-radius:9px;min-width:39px;min-height:39px;font-size:23px;line-height:1;cursor:pointer}
+    .gl-photo-preview-image{display:block;width:100%;height:auto;max-height:45dvh;object-fit:contain;object-position:top;background:#fff;border:1px solid #ded8cc;border-radius:10px;-webkit-touch-callout:default;user-select:auto;-webkit-user-select:auto}
+    .gl-photo-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}
+    .gl-photo-actions button,.gl-photo-actions a{padding:13px 12px;min-height:49px;border:1px solid #c8bcaa;border-radius:10px;text-align:center;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;color:#2b2f28;background:#fff;display:flex;align-items:center;justify-content:center}
+    .gl-photo-actions .gl-photo-native{background:#252923;color:#fff;border-color:#252923}
+    .gl-photo-instructions{font-size:12px;line-height:1.55;color:#5d635b;margin:13px 2px 0}
+    .gl-photo-info{font-size:12px;color:#79582f;margin:8px 2px 0;min-height:1.25em}
+    @media(max-width:420px){.gl-photo-panel{padding:13px}.gl-photo-actions{grid-template-columns:1fr}.gl-photo-preview-image{max-height:38dvh}}
+  `;
+  document.head.appendChild(previewCss);
+  const photoDialog = document.createElement('div');
+  photoDialog.className = 'gl-photo-preview';
+  photoDialog.hidden = true;
+  photoDialog.setAttribute('role', 'dialog');
+  photoDialog.setAttribute('aria-modal', 'true');
+  photoDialog.setAttribute('aria-labelledby', 'gl-photo-heading');
+  photoDialog.innerHTML = `
+    <div class="gl-photo-panel">
+      <div class="gl-photo-top">
+        <div><h2 id="gl-photo-heading">Your signed timesheet photo</h2><p>Check the image before saving it to your phone.</p></div>
+        <button type="button" class="gl-photo-close" id="gl-photo-close" aria-label="Close image preview">×</button>
+      </div>
+      <img class="gl-photo-preview-image" id="gl-photo-image" alt="Signed GoLabour timesheet image. Touch and hold to save the photo on iPhone." />
+      <div class="gl-photo-actions">
+        <button type="button" class="gl-photo-native" id="gl-photo-share">Save to Photos / Share</button>
+        <a id="gl-photo-download" href="#" download>Download PNG</a>
+      </div>
+      <p class="gl-photo-instructions"><strong>iPhone:</strong> tap “Save to Photos / Share”, then choose <strong>Save Image</strong> if available. Or touch and hold the photo above and choose Save to Photos. <strong>Android:</strong> use Share or Download PNG; the downloaded image may be in Downloads instead of your Gallery.</p>
+      <p class="gl-photo-info" id="gl-photo-info" role="status" aria-live="polite"></p>
+    </div>`;
+  document.body.appendChild(photoDialog);
+  const photo = (id) => document.getElementById(id);
+  const photoInfo = (message) => { photo('gl-photo-info').textContent = message; };
+  function closePreview() {
+    photoDialog.hidden = true;
+    document.body.style.overflow = '';
+    // Keep the URL alive while another app/browser tab may be reading it.
+    previewPreviousFocus?.focus();
+    if (previewUrl) {
+      const old = previewUrl;
+      setTimeout(() => URL.revokeObjectURL(old), 60000);
+      previewUrl = '';
+    }
+    previewFile = null;
+  }
+  photo('gl-photo-close').addEventListener('click', closePreview);
+  photoDialog.addEventListener('click', (event) => { if (event.target === photoDialog) closePreview(); });
+  document.addEventListener('keydown', (event) => {
+    if (!photoDialog.hidden && event.key === 'Escape') closePreview();
+  });
+  function openPreview(blob, name) {
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    previewName = name;
+    previewFile = new File([blob], name, { type: 'image/png' });
+    previewUrl = URL.createObjectURL(blob);
+    photo('gl-photo-image').src = previewUrl;
+    const a = photo('gl-photo-download');
+    a.href = previewUrl;
+    a.download = name;
+    photoInfo('');
+    previewPreviousFocus = document.activeElement;
+    photoDialog.hidden = false;
+    document.body.style.overflow = 'hidden';
+    photo('gl-photo-close').focus();
+  }
+  photo('gl-photo-share').addEventListener('click', async () => {
+    if (!previewFile) return;
+    if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [previewFile] }))) {
+      try {
+        // Must execute directly in the user's click, not after awaiting a canvas conversion.
+        await navigator.share({ files: [previewFile], title: 'GoLabour signed timesheet' });
+        photoInfo('Share menu completed. If you chose Save Image, check Photos.');
+        return;
+      } catch (error) {
+        if (error?.name === 'AbortError') { photoInfo('Saving or sharing cancelled. Your image is still here.'); return; }
+      }
+    }
+    photoInfo('This browser cannot open the image-sharing menu. Touch and hold the picture above to save it, or tap Download PNG.');
+  });
+  photo('gl-photo-download').addEventListener('click', () => {
+    photoInfo('Download requested. On iPhone, Safari may save PNG files to Files > Downloads instead of Photos. To use Photos, try Save to Photos / Share above.');
+  });
   $('downloadButton').addEventListener('click', () => {
     const r = getValidatedReport(); if (!r) return;
     try {
-      const {url} = canvasToFile(makeImage(r),fileName(r));
-      triggerDownload(url,fileName(r));
-      feedback('Signed timesheet image created. Open WhatsApp, choose your work group and attach the saved PNG.');
-    } catch { feedback('Unable to create the image on this device. Try Print / Save as PDF instead.',true); }
+      const canvas = makeImage(r);
+      const name = fileName(r);
+      const btn = $('downloadButton');
+      btn.disabled = true;
+      canvas.toBlob((blob) => {
+        btn.disabled = false;
+        if (!blob || !blob.size) { feedback('Image creation failed. Please try Print / Save as PDF.', true); return; }
+        try {
+          openPreview(blob, name);
+          feedback('Signed timesheet photo ready. Use the preview to save it to Photos or download the PNG.');
+        } catch {
+          feedback('Cannot open the photo preview on this device. Please try Print / Save as PDF.', true);
+        }
+      }, 'image/png');
+    } catch {
+      $('downloadButton').disabled = false;
+      feedback('Unable to create the image on this device. Try Print / Save as PDF instead.', true);
+    }
   });
   $('shareButton').addEventListener('click', async () => {
     const r = getValidatedReport(); if (!r) return;
