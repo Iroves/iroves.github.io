@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071b32">
+  <meta name="description" content="Glen Coxon — Master Painter & Decorator. Restoration, interiors and exteriors. Over 20 years experience.">
+  <meta property="og:title" content="Glen Coxon | Master Painter & Decorator">
+  <meta property="og:description" content="Over 20 years experience. Restoration • Interiors • Exteriors.">
+  <meta property="og:image" content="assets/glen-portrait.webp">
+  <title>Glen Coxon · Master Painter & Decorator</title>
+  <link rel="preload" as="image" href="assets/glen-portrait.webp">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="site">
+    <article class="profile" aria-label="Glen Coxon's digital business card">
+      <div class="moving-layer" aria-hidden="true">
+        <video id="motionVideo" muted autoplay loop playsinline webkit-playsinline preload="auto" poster="assets/blue-motion-poster.jpg">
+          <source src="assets/blue-paint-motion.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="portrait-surface" aria-hidden="true">
+        <img id="portrait" src="assets/glen-portrait.webp" alt="">
+        <div class="portrait-tint"></div>
+      </div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="curved-stroke" aria-hidden="true"></div>
+
+      <div class="card-inner">
+        <header class="navline">
+          <div class="identity-mini">
+            <span class="monogram" aria-hidden="true">GC<span class="gold-dot">.</span></span>
+            <span class="mini-caption">MASTER PAINTER<br>&amp; DECORATOR</span>
+          </div>
+          <button id="motionToggle" class="motion-toggle" type="button" aria-label="Pause moving background" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+            <span>Pause motion</span>
+          </button>
+        </header>
+
+        <section class="hero" aria-label="Profile">
+          <div class="hero-content">
+            <span class="eyebrow"><span class="tiny-rule"></span> THE ART OF A PERFECT FINISH</span>
+            <h1 id="fullName">Glen <em>Coxon</em></h1>
+            <p id="tradeTitle" class="trade">Master Painter &amp; Decorator</p>
+            <p id="experience" class="experience"><strong>20+</strong> YEARS OF EXPERIENCE</p>
+            <p id="tagline" class="script">Perfectionist.</p>
+            <div class="service-inline" aria-label="Professional services"><span>RESTORATION</span><b>·</b><span>INTERIORS</span><b>·</b><span>EXTERIORS</span></div>
+            <div class="hero-actions">
+              <a class="btn btn-call" id="callBtn" href="tel:+61422962582">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3.1a2 2 0 0 1-.6 1.8L7.2 10a16 16 0 0 0 6.8 6.8l1.4-1.8a2 2 0 0 1 1.8-.6l3.1.5a2 2 0 0 1 1.7 2z"/></svg>
+                <span id="callText">Call 0422 962 582</span>
+              </a>
+              <button class="btn btn-save" id="saveContact" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+                Save contact
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="paint-divider"><span></span><span></span><span></span></div>
+
+        <section class="specialties" aria-labelledby="specialtiesTitle">
+          <div class="section-heading">
+            <span>WHAT I DO</span>
+            <h2 id="specialtiesTitle">Care in every detail.</h2>
+          </div>
+          <div class="service-grid">
+            <div class="service-tile"><div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 23h18M10 23V9l6-4 6 4v14M13 11h6M13 15h6M13 19h6"/></svg></div><strong>Restoration</strong><span>Respect for the original detail</span></div>
+            <div class="service-tile"><div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 24h24M8 24V7h16v17M12 12h8M12 16h8M12 20h8"/></svg></div><strong>Interiors</strong><span>Beautifully finished spaces</span></div>
+            <div class="service-tile"><div class="tile-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m3 15 13-10 13 10M7 13v14h18V13M12 27v-9h8v9"/></svg></div><strong>Exteriors</strong><span>A lasting first impression</span></div>
+          </div>
+        </section>
+
+        <section class="bottom-cta" aria-label="Contact details">
+          <div><span class="small-overline">LET'S TALK ABOUT YOUR PROJECT</span><a id="phoneLink" href="tel:+61422962582">0422 962 582</a></div>
+          <button class="share-button" id="shareCard" type="button" aria-label="Share this digital business card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="5" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8 11 7-5M8 13l7 5"/></svg>
+            Share card
+          </button>
+        </section>
+        <footer class="footer"><span>GLEN COXON</span><span>QUALITY IS IN THE DETAILS</span></footer>
+      </div>
+    </article>
+    <p class="external-caption">Crafted with care. Shared in one tap.</p>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
