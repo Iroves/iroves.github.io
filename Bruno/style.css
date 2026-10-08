@@ -1,0 +1,57 @@
+/* Bruno M Giuffre — premium, mobile-first NFC card. Only source-provided details. */
+:root{--navy:#071b32;--mid:#102d4c;--accent:#dbc59b;--cream:#f4ece0;--text:#112b47;--sub:#748096;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:#041226;color:#f8f5ed;font:15px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,#153c64 0%,transparent 52%),radial-gradient(ellipse at 95% 92%,#132b4b 0%,transparent 40%);z-index:-1;pointer-events:none}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:3px solid #ead5a8;outline-offset:3px}
+.page{max-width:498px;margin:auto;padding:0 12px 24px}
+.card{border-radius:0 0 28px 28px;overflow:hidden;isolation:isolate;background:var(--navy);border:1px solid #93b0d044;border-top:0;box-shadow:0 35px 80px #010711ab}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:25px 26px 12px;position:relative;z-index:2}
+.mast-name{font-size:10px;font-weight:800;color:#f4e6c7;letter-spacing:.19em}
+.mast-role{font-size:9px;font-weight:700;color:#cad8e5;letter-spacing:.15em;text-align:right;line-height:1.6}
+.identity{position:relative;text-align:center;overflow:hidden;padding:8px 18px 26px;background:radial-gradient(ellipse at 48% 10%,#274765 0%,transparent 44%),linear-gradient(180deg,#0c2543 0%,#0b2646 55%,#08203b 100%)}
+.identity::before,.identity::after{content:"";position:absolute;pointer-events:none;border:1px solid #dcc49b30;border-radius:50%;width:430px;height:430px;left:50%;top:-248px;transform:translateX(-50%)}
+.identity::after{width:515px;height:515px;top:-292px;opacity:.5}
+.portrait-panel{height:275px;display:flex;justify-content:center;align-items:center;position:relative;margin:0 auto 4px;isolation:isolate}
+.portrait-halo{position:absolute;inset:auto;width:259px;height:259px;border-radius:50%;border:1px solid #d4b88a80;box-shadow:0 15px 48px #030d1f7c,0 0 0 13px #7799bd13,0 0 0 24px #7799bd0d;z-index:-1}
+.portrait{width:238px;height:238px;object-fit:cover;object-position:center center;border-radius:50%;display:block;background:#1e3956;box-shadow:0 6px 30px #050b1b77;filter:saturate(.88) contrast(1.035);border:2px solid #f4f1e8b8}
+.identity-copy{position:relative;z-index:1}
+.professional-title{font-size:10px;color:#eedbb2;letter-spacing:.24em;font-weight:800;margin:6px 0 14px}
+h1{font:400 clamp(47px,11vw,60px)/.98 Georgia,'Times New Roman',serif;letter-spacing:-.04em;margin:0;color:#fffdf8;text-wrap:balance}
+h1 span{color:#f1d8a7}
+.fine-divider{height:1px;max-width:255px;margin:21px auto 18px;background:linear-gradient(90deg,transparent,#d4ba8c80,transparent);position:relative}
+.fine-divider span{position:absolute;width:44px;height:2px;background:#d7bd8d;left:calc(50% - 22px);top:-.5px}
+.credentials{letter-spacing:.13em;font-size:11px;font-weight:750;color:#e5ecf4;margin:0}
+.profession{font:normal 19px Georgia,'Times New Roman',serif;color:#fff8eb;margin:8px 0 0}
+.quick-actions{padding:16px 22px 22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;background:linear-gradient(180deg,#08203b,#071b32)}
+.action{min-width:0;min-height:58px;border-radius:12px;text-decoration:none;display:flex;gap:10px;align-items:center;padding:12px 14px;transition:filter .18s,transform .18s;border:1px solid #aec5df45;color:#eaf4ff;background:#0d2b4b;font-weight:750}
+.action:hover,.save-contact:hover{filter:brightness(1.09);transform:translateY(-1px)}
+.action svg,.location-link svg,.save-contact svg{width:19px;height:19px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.action b,.location-link b,.save-contact b{margin-left:auto;font-weight:450;font-size:19px;opacity:.75}
+.action-primary{background:linear-gradient(115deg,#f6e3bb,#dab982);color:#102943;border:1px solid #ffefd0}
+.action-outline{border-color:#d9c39996;background:#16365499;color:#fceacc}
+.action-secondary{background:#1232518a}
+.affiliations{display:grid;grid-template-columns:1.5fr 1fr;gap:0;background:#fff;border-top:4px solid #cdb588;border-bottom:1px solid #e7e9ec;align-items:stretch}
+.logo-panel{min-width:0;min-height:153px;padding:16px 15px;display:flex;align-items:center;justify-content:center;background:#fff}
+.logo-panel+.logo-panel{border-left:1px solid #e4e9ef}
+.logo-panel img{display:block;max-width:100%;max-height:125px;object-fit:contain;image-rendering:auto}
+.logo-university img{width:200px;height:auto;max-height:122px}
+.logo-hospital img{height:134px;width:auto;max-height:134px}
+.contact{background:#faf8f4;color:var(--text);padding:28px 22px 28px}
+.address-block{border:1px solid #e6dfd4;border-radius:13px;background:#fff;padding:21px 21px 19px;box-shadow:0 5px 18px #12274208}
+.section-kicker{font-size:10px;font-weight:800;letter-spacing:.09em;color:#97784a;text-transform:uppercase;margin:0 0 12px;line-height:1.6}
+address{font:normal 16px/1.75 system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#223a50}
+.location-link{text-decoration:none;color:#173d63;border-top:1px solid #e9e7e2;margin-top:18px;padding-top:16px;display:flex;align-items:center;gap:11px;font-size:14px;font-weight:750}
+.contact-rows{padding:17px 2px 12px}
+.contact-row{position:relative;display:grid;grid-template-columns:1fr 27px;grid-template-rows:auto auto;padding:14px 7px 15px;border-bottom:1px solid #dddcd8;text-decoration:none;color:var(--text);gap:1px 8px}
+.contact-row span{font-size:10px;text-transform:uppercase;color:#947b56;letter-spacing:.15em;font-weight:850}
+.contact-row strong{font-size:15px;line-height:1.35;font-weight:650;overflow-wrap:anywhere}
+.contact-row b{grid-column:2;grid-row:1/3;color:#a68a65;align-self:center;justify-self:end;font-size:20px;font-weight:400}
+.contact-row:hover strong,.location-link:hover span{text-decoration:underline;text-underline-offset:4px}
+.save-contact{display:flex;align-items:center;gap:13px;width:100%;background:var(--navy);color:#fff8ee;border:1px solid #173657;border-radius:13px;min-height:62px;padding:16px 21px;text-align:left;cursor:pointer;font:750 15px system-ui,-apple-system,Segoe UI,Arial,sans-serif;box-shadow:0 8px 22px #051a3340;transition:filter .18s,transform .18s}
+.footer{text-align:center;color:#beccda;font-size:11px;letter-spacing:.035em;padding:20px 12px 22px;border-top:1px solid #ffffff2c;background:#071b32}
+@media (min-width:600px){.page{padding-top:22px}.card{border-radius:28px;border-top:1px solid #93b0d044}.masthead{padding-top:27px}}
+@media (max-width:370px){.page{padding-left:6px;padding-right:6px}.masthead{padding-left:21px;padding-right:21px}.portrait-panel{height:248px}.portrait{width:214px;height:214px}.portrait-halo{width:238px;height:238px}.identity{padding-bottom:25px}.quick-actions{padding:15px 16px 20px}.action{padding:11px 10px;gap:8px}.logo-panel{min-height:132px;padding:13px 10px}.logo-university img{width:165px}.logo-hospital img{height:105px}.contact{padding:21px 16px}.contact-row strong{font-size:14px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.action,.save-contact{transition:none}}
