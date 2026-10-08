@@ -1,0 +1,57 @@
+:root { --ink:#071a31;--navy:#0a213e;--light:#f4f8ff;--silver:#d2e0f0;--gold:#e8cf9f;--blue:#5784b5 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0%,#1c4267 0%,#07192f 50%,#030c19 100%);color:var(--light);font-family:Inter,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}button{font:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:3px solid #ffe2a7;outline-offset:3px}
+.site{width:min(100% - 30px,1030px);margin:0 auto;padding:26px 0}
+.profile{position:relative;isolation:isolate;overflow:hidden;border-radius:29px;border:1px solid rgba(213,229,247,.25);background:#0b2545;box-shadow:0 32px 85px #0006;padding:27px 34px 19px}
+.moving-layer{position:absolute;inset:0;z-index:-3;background:#0a213e url('assets/blue-motion-poster.jpg') center/cover no-repeat;pointer-events:none}
+.moving-layer video{width:100%;height:100%;object-fit:cover;opacity:.91;filter:saturate(1.18) contrast(1.04)}
+.moving-wash{position:absolute;inset:0;background:linear-gradient(100deg,rgba(3,15,33,.87),rgba(5,20,41,.64) 53%,rgba(5,20,42,.28)),linear-gradient(180deg,rgba(5,20,43,.27),rgba(4,17,36,.76) 100%)}
+.light-arc{position:absolute;inset:-60% -60% auto auto;width:95%;height:105%;border:2px solid rgba(214,234,255,.1);border-radius:50%;transform:rotate(-20deg);box-shadow:0 0 0 26px #ffffff04,0 0 0 75px #ffffff04;pointer-events:none;z-index:-1}
+.topline{display:flex;align-items:center;gap:12px;position:relative;z-index:3}
+.monogram{font:700 36px/1 Georgia,serif;letter-spacing:-3px}.monogram span{color:var(--gold)}.topline-trade{font-size:9px;letter-spacing:2px;line-height:1.5;font-weight:800;color:#c5d4e6}
+.topline-mark{margin-left:auto;border:1px solid #ffffff28;border-radius:99px;padding:9px 12px;font-size:9px;color:#cbd9e9;letter-spacing:1.2px;font-weight:750}
+.hero{position:relative;display:grid;grid-template-columns:1fr .95fr;min-height:460px;align-items:center;gap:12px;margin-top:6px}
+.hero-copy{position:relative;z-index:2;padding:32px 0;min-width:0}
+.eyebrow{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:1.7px;margin:0 0 15px}
+h1{font:400 clamp(49px,6.2vw,90px)/.99 Georgia,'Times New Roman',serif;letter-spacing:-2.3px;margin:0 0 13px;text-shadow:0 6px 25px #0005}h1 em{font-style:italic;color:#dceafa}
+.trade{font:400 clamp(18px,2.3vw,29px)/1.22 Georgia,serif;color:#e8f1fb;margin:0 0 23px}
+.experience{display:flex;align-items:center;gap:11px;margin:0 0 19px;color:var(--gold)}.experience strong{font:700 32px/1 Georgia,serif}.experience span{font-size:9px;letter-spacing:1.6px;line-height:1.5;font-weight:850}
+.perfectionist{font:italic 400 28px/1.2 Georgia,serif;color:#edcf9a;margin:0 0 21px}
+.service-inline{display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:#d4e1ef;font-size:10px;font-weight:700;letter-spacing:1.35px}.service-inline b{color:#d7ba89}
+.portrait-wrap{position:relative;z-index:1;height:460px;min-width:0;align-self:stretch;overflow:visible}
+.portrait-halo{position:absolute;inset:8% 0 2% 0;background:radial-gradient(ellipse at 60% 45%,rgba(124,175,217,.24) 0%,transparent 65%);filter:blur(18px)}
+.portrait{position:absolute;inset:-2% -4% -6% -2%;width:112%;height:113%;display:block;object-fit:cover;object-position:52% 22%;filter:brightness(1.15) contrast(1.06) saturate(1.04) drop-shadow(0 10px 28px #0006);-webkit-mask-image:radial-gradient(ellipse 64% 66% at 54% 45%,black 35%,rgba(0,0,0,.96) 44%,transparent 78%);mask-image:radial-gradient(ellipse 64% 66% at 54% 45%,black 35%,rgba(0,0,0,.96) 44%,transparent 78%)}
+.portrait-blend{position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,29,56,.35),transparent 25%);pointer-events:none}
+.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative;z-index:4;border-top:1px solid #dceaff24;padding-top:24px;margin-top:8px}
+.action{min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border:1px solid rgba(214,234,255,.27);padding:17px 12px;border-radius:15px;background:rgba(19,49,82,.59);color:#f7fbff;font-size:13px;font-weight:750;transition:transform .2s ease,background .2s ease}
+.action:hover,.share-button:hover{transform:translateY(-2px)}.action svg,.share-button svg{height:19px;width:19px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.action.primary{background:var(--gold);color:#071d34;border-color:var(--gold);box-shadow:0 8px 25px #0005}.action.secondary{background:rgba(75,117,164,.35)}.action.outline{background:rgba(6,23,45,.64)}
+.subline{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #c9deef28;padding:20px 0 16px;margin-top:24px}
+.subline>span{font-size:10px;letter-spacing:1.2px;color:#d5e2f1;font-weight:750}.subline i{color:var(--gold);font-style:normal}
+.share-button{border:1px solid #d8e9fa44;border-radius:12px;color:white;background:#ffffff12;padding:10px 12px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;white-space:nowrap;transition:transform .2s ease}
+.share-button svg{height:16px;width:16px}.footer{display:flex;justify-content:space-between;gap:9px;border-top:1px solid #edf4fe22;padding-top:15px;color:#a3bbd5;font-size:9px;letter-spacing:1.4px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,18px);z-index:20;color:#061a30;background:var(--gold);border-radius:11px;padding:13px 18px;max-width:calc(100vw - 28px);font-size:12px;font-weight:700;box-shadow:0 12px 24px #0005;opacity:0;pointer-events:none;transition:transform .2s,opacity .2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:780px){.profile{padding:24px}.hero{min-height:420px}.portrait-wrap{height:420px}.hero-copy{padding:20px 0}}
+/* A landscape-like, side-by-side layout even on a portrait mobile screen. */
+@media(max-width:560px){
+.site{width:100%;padding:0}.profile{min-height:100dvh;border-radius:0;border:0;padding:18px 17px 17px}
+.monogram{font-size:31px}.topline{gap:9px}.topline-trade{font-size:7px;letter-spacing:1.25px}.topline-mark{font-size:8px;padding:8px;letter-spacing:.7px}
+.hero{grid-template-columns:minmax(0,.99fr) minmax(0,1.01fr);min-height:300px;height:auto;gap:2px;align-items:center;margin-top:19px}
+.hero-copy{padding:7px 0 9px;align-self:center}
+.eyebrow{font-size:8px;letter-spacing:.85px;margin-bottom:12px;line-height:1.45}
+h1{font-size:clamp(34px,9.1vw,51px);line-height:1.05;letter-spacing:-1px;margin:0 0 9px}h1 em{display:block}
+.trade{font-size:clamp(15px,4.4vw,19px);line-height:1.18;margin-bottom:15px;max-width:230px}
+.experience{gap:7px;margin-bottom:13px}.experience strong{font-size:28px}.experience span{font-size:8px;letter-spacing:1.05px}
+.perfectionist{font-size:clamp(17px,5vw,23px);margin:0 0 10px}
+.service-inline{font-size:8px;gap:5px;letter-spacing:.25px;max-width:190px;line-height:1.6}
+.portrait-wrap{height:310px;align-self:center;overflow:visible;margin-right:-16px}
+.portrait{inset:-8% -18% -7% -19%;width:137%;height:121%;object-position:50% 13%;filter:brightness(1.22) contrast(1.04) saturate(1.11);-webkit-mask-image:radial-gradient(ellipse 64% 66% at 54% 45%,black 35%,rgba(0,0,0,.96) 44%,transparent 78%);mask-image:radial-gradient(ellipse 64% 66% at 54% 45%,black 35%,rgba(0,0,0,.96) 44%,transparent 78%)}
+.portrait-blend{background:linear-gradient(0deg,rgba(8,29,56,.26),transparent 18%)}
+.actions{grid-template-columns:1fr;gap:10px;padding-top:18px;margin-top:11px}.action{min-height:53px;font-size:14px;justify-content:center;padding:15px}
+.subline{padding:18px 0 14px;margin-top:19px}.subline>span{font-size:8px;letter-spacing:.3px;line-height:1.6;max-width:220px}.share-button{font-size:10px;padding:9px}.footer{font-size:8px;letter-spacing:.7px}
+}
+@media(max-width:365px){.profile{padding-left:12px;padding-right:12px}.hero{grid-template-columns:49% 51%}.portrait-wrap{margin-right:-12px}.eyebrow{font-size:7px}.trade{font-size:15px}.service-inline{font-size:7.5px}}
+@media(prefers-reduced-motion:reduce){.moving-layer video{display:none}.action,.share-button,.toast{transition:none}html{scroll-behavior:auto}}
+@media print{body{background:white}.profile{box-shadow:none;border:0}.moving-layer video,.share-button{display:none}}
