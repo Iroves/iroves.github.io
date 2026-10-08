@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>X Expo Now | Digital Business Card</title>
+
+<style>
+*{box-sizing:border-box}
+:root{
+  --accent:#d8b36a;
+  --dark:#0b1220;
+  --glass:rgba(8,15,28,.72);
+  --line:rgba(255,255,255,.16);
+}
+html,body{min-height:100%;margin:0}
+body{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:#0b1220;
+  min-height:100vh;
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;z-index:-3;
+  background-image:
+    linear-gradient(135deg,rgba(5,10,20,.78),rgba(5,10,20,.40)),
+    url("background.jpg");
+  background-size:cover;background-position:center;
+  filter:saturate(.9);
+}
+body:after{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:radial-gradient(circle at 50% 0%,rgba(216,179,106,.18),transparent 38%),
+             linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));
+  pointer-events:none;
+}
+.wrap{
+  width:100%;max-width:500px;margin:auto;padding:22px 16px 28px;
+}
+.card{
+  overflow:hidden;border:1px solid var(--line);border-radius:30px;
+  background:var(--glass);
+  box-shadow:0 25px 70px rgba(0,0,0,.38);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+}
+.hero{
+  padding:34px 24px 28px;text-align:center;
+  border-bottom:1px solid var(--line);
+}
+.avatar{
+  width:112px;height:112px;border-radius:50%;margin:0 auto 17px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:#fff;color:var(--dark);
+  border:4px solid rgba(255,255,255,.9);
+  box-shadow:0 10px 35px rgba(0,0,0,.35);
+  font-size:32px;font-weight:800;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:none}
+.eyebrow{
+  color:var(--accent);font-size:11px;letter-spacing:2.6px;
+  text-transform:uppercase;font-weight:800;margin-bottom:9px;
+}
+h1{font-size:30px;line-height:1.08;margin:0 0 7px;letter-spacing:-.5px}
+.role{font-size:15px;color:rgba(255,255,255,.78)}
+.company{font-size:16px;font-weight:750;margin-top:6px}
+.divider{
+  width:48px;height:2px;background:var(--accent);
+  margin:17px auto 0;border-radius:10px;
+}
+.actions{padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.action{
+  min-height:57px;border:1px solid rgba(255,255,255,.17);
+  border-radius:16px;text-decoration:none;color:#fff;
+  background:rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:750;font-size:14px;transition:.2s;
+}
+.action:hover{transform:translateY(-2px);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
+.primary{background:#fff;color:#0b1220;border-color:#fff}
+.primary:hover{background:#f3f3f3}
+.about{
+  padding:0 27px 21px;text-align:center;
+  color:rgba(255,255,255,.72);line-height:1.6;font-size:14px;
+}
+.save{
+  display:block;width:calc(100% - 44px);margin:0 22px 12px;
+  padding:16px;border:0;border-radius:16px;background:var(--accent);
+  color:#10151d;font-weight:850;font-size:15px;cursor:pointer;
+  box-shadow:0 10px 25px rgba(216,179,106,.18);
+}
+.small{text-align:center;color:rgba(255,255,255,.45);font-size:11px;padding:0 20px 23px}
+.footer{text-align:center;padding-top:13px;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+@media(max-width:350px){.actions{grid-template-columns:1fr}.wrap{padding:12px 10px}.hero{padding-top:27px}}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+<section class="card">
+
+<header class="hero">
+  <div class="avatar">
+    <span id="initials">XE</span>
+    <img id="profilePhoto" alt="Profile photo">
+  </div>
+  <div class="eyebrow">EXPO • EVENTS • SERVICES</div>
+  <h1>X Expo Now</h1>
+  <div class="role">Director</div>
+  <div class="company">Expo Services Australia</div>
+  <div class="divider"></div>
+</header>
+
+<div class="actions">
+  <a class="action primary" href="tel:+61421701204">☎ Call</a>
+  <a class="action" href="mailto:xexponow@outlook.com">✉ E-mail</a>
+  <a class="action" href="https://wa.me/61421701204" target="_blank" rel="noopener">◉ WhatsApp</a>
+  <a class="action" href="https://maps.google.com/?q=Sydney+NSW" target="_blank" rel="noopener">⌖ Location</a>
+  <a class="action" href="https://example.com" target="_blank" rel="noopener">◈ Website</a>
+  <a class="action" href="https://www.linkedin.com" target="_blank" rel="noopener">in LinkedIn</a>
+</div>
+
+<div class="about">
+  Professional services across Sydney and NSW.<br>
+  Available for enquiries, quotes and appointments.
+</div>
+
+<button class="save" id="save">＋ Save Contact</button>
+<div class="small">Tap any button above to connect</div>
+</section>
+
+<div class="footer">X Expo Now • Sydney • NSW</div>
+</main>
+
+<script>
+/*
+  ================================
+  EASY IMAGE CUSTOMISATION
+  ================================
+
+  1. Put your background image in the same GitHub folder and name it:
+     background.jpg
+
+  2. Put your profile photo in the same folder and name it:
+     profile.jpg
+
+  You can also use PNG/WebP by changing the filenames below.
+*/
+
+const PROFILE_IMAGE = "profile.jpg";
+
+/* Load profile photo */
+const photo = document.getElementById("profilePhoto");
+const initials = document.getElementById("initials");
+
+photo.src = PROFILE_IMAGE;
+photo.onload = () => {
+  photo.style.display = "block";
+  initials.style.display = "none";
+};
+
+/* Save contact */
+document.getElementById("save").addEventListener("click", function(){
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "FN:X Expo Now",
+    "ORG:Expo Services Australia",
+    "TITLE:Director",
+    "TEL;TYPE=CELL:+61421701204",
+    "EMAIL:xexponow@outlook.com",
+    "URL:https://example.com",
+    "ADR;TYPE=WORK:;;Sydney;NSW;;;Australia",
+    "END:VCARD"
+  ].join("\r\n");
+
+  const blob = new Blob([vcard], {type:"text/vcard;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "X-Expo-Now.vcf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+</script>
+</body>
+</html>
