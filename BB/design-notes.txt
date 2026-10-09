@@ -1,3 +1,0 @@
-Generated decorative artwork using the built-in image-generation tool.
-Prompt: A single centered human body radiology illustration, luminous icy blue and cyan translucent silhouette with visible skeleton, midnight navy background, refined soft blue glow, no text or labels. Decorative art, not a diagnostic scan.
-Hospital logo background cleanup also used the built-in image-generation tool: remove checkerboard background, preserve crest colours, lettering and horizontal placement, transparent output.
