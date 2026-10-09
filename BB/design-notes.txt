@@ -1,0 +1,1 @@
+Latest HD radiology artwork enhanced with the built-in image tool from the user-supplied picture. Blue palette and radiology interface retained, watermark markings preserved. Artwork is decorative, not a diagnostic image. CSS provides the full-card fade. Both crest PNGs have real alpha transparency; SVG viewports crop the crests for use beside live institutional lettering.
