@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Giuffrè;Bruno;M;;
+FN:Bruno M Giuffrè
+ORG:Royal North Shore Hospital;Department of Diagnostic Radiology
+TITLE:Diagnostic Radiologist
+TEL;TYPE=WORK,VOICE:+61299264415
+TEL;TYPE=CELL,VOICE:+61419814346
+TEL;TYPE=WORK,FAX:+61299264097
+EMAIL;TYPE=WORK:bruno.giuffre@health.nsw.gov.au
+ADR;TYPE=WORK:;;Level 2 Main Building Royal North Shore Hospital;St Leonards;NSW;2065;Australia
+NOTE:M.B.B.S.\, F.R.A.N.Z.C.R.
+END:VCARD
