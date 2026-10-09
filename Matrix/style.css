@@ -1,0 +1,31 @@
+:root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #050b09; color: #eaf4ed; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.preview { width: min(100%,500px); margin: auto; padding: 32px 24px 40px; }
+.kicker { font: 600 11px/1.5 monospace; letter-spacing: .16em; color: #72a283; }
+h1 { font-size: clamp(30px,7vw,38px); font-weight: 520; line-height: 1.06; letter-spacing: -.055em; margin: 13px 0 14px; }
+.intro-note { color: #94ab9d; font-size: 14px; line-height: 1.5; margin: 0 0 24px; }
+.style-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.style-switch button { border: 1px solid #315342; background: #0b1711; color: #b4cbbc; border-radius: 10px; min-height: 48px; padding: 12px 8px; font-family: inherit; font-size: 14px; font-weight: 550; line-height: 1.25; cursor: pointer; }
+.style-switch button[aria-pressed="true"] { background: #164f32; color: #e2ffe8; border-color: #43a567; }
+.style-caption { color: #80a88e; min-height: 38px; font-size: 13px; line-height: 1.5; margin: 12px 0 18px; }
+.motion-card { position: relative; isolation: isolate; overflow: hidden; min-height: 740px; aspect-ratio: 9 / 16; border: 1px solid #2c513a; border-radius: 22px; background: #010605 url("assets/digital-rain-poster.jpg") center / cover; box-shadow: 0 20px 70px #0008; }
+.motion-video { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; }
+.motion-video.is-still { visibility: hidden; }
+.card-shade { position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(180deg,#01060599 0%,#01060511 32%,#01060555 47%,#010605e8 70%,#010605 100%); }
+.card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 28px 26px; }
+.wordmark { display: flex; align-items: center; gap: 8px; color: #b3ffc9; font-size: 17px; font-weight: 650; letter-spacing: -.04em; }
+#motion-toggle { border: 1px solid #60957166; color: #c7e0ce; background: #05150dca; border-radius: 7px; min-height: 44px; padding: 10px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+button:focus-visible { outline: 2px solid #b5ffc9; outline-offset: 4px; }
+.card-identity { position: absolute; left: 26px; right: 26px; bottom: 28px; }
+.identity-kicker { font: 600 12px/1.4 monospace; letter-spacing: .13em; color: #79c494; margin: 0; }
+h2 { font-size: clamp(59px,17vw,84px); font-weight: 530; line-height: .97; letter-spacing: -.07em; margin: 22px 0 18px; }
+h2 span { color: #85edaa; font-weight: 350; }
+.role { color: #b0cbbc; font-size: 16px; line-height: 1.45; margin: 0; max-width: 310px; }
+.identity-rule { background: linear-gradient(90deg,#69bb8980,#69bb8900); height: 1px; margin: 26px 0 20px; }
+.identity-copy { color: #9ebaa9; font-size: 15px; line-height: 1.55; margin: 0 0 24px; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; color: #699579; font: 600 11px/1.4 monospace; letter-spacing: .05em; }
+.card-footer > span:last-child { font: 26px/1 sans-serif; color: #a2e7bb; }
+.preview-note { color: #849e8e; font-size: 13px; line-height: 1.6; margin: 20px 0 0; }
+@media(max-width:420px) { .preview { padding: 26px 16px 32px; } .motion-card { min-height: 690px; border-radius: 18px; } .card-top { padding: 24px 22px; } .card-identity { left: 22px; right: 22px; bottom: 26px; } }
+@media(prefers-reduced-motion:reduce) { .motion-video { visibility: hidden; } .motion-video.motion-requested:not(.is-still) { visibility: visible; } }

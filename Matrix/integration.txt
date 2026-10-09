@@ -1,0 +1,45 @@
+Choose one background:
+  digital-rain.mp4 / digital-rain-poster.jpg
+  code-tunnel.mp4 / code-tunnel-poster.jpg
+
+Place inside your card, before its existing text:
+
+<video class="card-motion" autoplay loop muted playsinline preload="metadata"
+       poster="assets/digital-rain-poster.jpg" aria-hidden="true" tabindex="-1">
+  <source src="assets/digital-rain.mp4" type="video/mp4">
+</video>
+<div class="card-motion-shade" aria-hidden="true"></div>
+<div class="card-content">
+  <!-- Your existing profile and buttons -->
+</div>
+
+CSS (replace .your-card with your actual card class):
+
+.your-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #010605 url("assets/digital-rain-poster.jpg") center / cover;
+}
+.card-motion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+}
+.card-motion-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg,#01060533,#01060588 50%,#010605f2 80%);
+}
+.card-content { position: relative; }
+@media(prefers-reduced-motion:reduce) { .card-motion { display: none; } }
+
+Adapt the Play/Pause button and script.js from the example for your own card.
+Keep essential information in HTML. A decorative video can be hidden without
+changing the card's content or links.

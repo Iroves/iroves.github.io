@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#010605">
+  <title>CIPHER · Motion card concepts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="preview">
+  <header class="preview-intro"><p class="kicker">CIPHER / MOTION STUDY</p><h1>A different kind<br>of presence.</h1><p class="intro-note">Two green-code motion styles for a digital identity.</p></header>
+  <div class="style-switch" role="group" aria-label="Choose animation style">
+    <button type="button" data-style="digital-rain" aria-pressed="true">Digital rain</button>
+    <button type="button" data-style="code-tunnel" aria-pressed="false">Code tunnel</button>
+  </div>
+  <p id="style-caption" class="style-caption" aria-live="polite">Cascading symbols, soft glow, classic green code.</p>
+  <article class="motion-card" aria-labelledby="profile-name">
+    <video id="motion-video" class="motion-video" src="assets/digital-rain.mp4" poster="assets/digital-rain-poster.jpg" autoplay loop muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>
+    <div class="card-shade" aria-hidden="true"></div>
+    <header class="card-top"><span class="wordmark"><svg width="25" height="25" viewBox="0 0 25 25" fill="none" aria-hidden="true"><path d="M8 3H3v5m14-5h5v5M3 17v5h5m14-5v5h-5" stroke="currentColor" stroke-width="1.5"/><circle cx="12.5" cy="12.5" r="2" fill="currentColor"/></svg>CIPHER</span><button id="motion-toggle" type="button" aria-controls="motion-video" aria-label="Play animation">Play motion</button></header>
+    <div class="card-identity"><p class="identity-kicker">INDEPENDENT BY DESIGN</p><h2 id="profile-name">Alex<br>Morgan<span>_</span></h2><p class="role">Creative direction &amp; digital experiences</p><div class="identity-rule"></div><p class="identity-copy">A fresh perspective.<br>An unmistakable identity.</p><div class="card-footer"><span>KEEP THE CONNECTION.</span><span aria-hidden="true">↗</span></div></div>
+  </article>
+  <p class="preview-note">Illustrative profile. Choose either animation for your own card.</p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
