@@ -20,14 +20,15 @@
     <svg class="gold-lines" x="0" y="0" width="1086" height="1448" viewBox="0 0 440 850" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#a17735" stop-opacity="0"/>
-          <stop offset=".28" stop-color="#cfaa62"/>
-          <stop offset=".55" stop-color="#f4dfaa"/>
-          <stop offset=".83" stop-color="#b38b48"/>
+          <stop stop-color="#8b6528" stop-opacity="0"/>
+          <stop offset=".2" stop-color="#a77b34"/><stop offset=".36" stop-color="#e6c779"/>
+          <stop offset=".5" stop-color="#fff0bd"/><stop offset=".62" stop-color="#d7ab55"/>
+          <stop offset=".83" stop-color="#f1d78f"/>
           <stop offset="1" stop-color="#a17735" stop-opacity="0"/>
         </linearGradient>
+      <filter id="gold-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.2" result="glow"/><feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
-      <g class="contours" fill="none" stroke="url(#gold)" stroke-width="2.6">
+      <g class="contours" fill="none" stroke="url(#gold)" stroke-width="2.2">
         <path d="M-70 620 C170 500 -100 290 70 170 S280 80 420 -40"/>
         <path d="M-58 638 C181 518 -88 308 82 188 S292 98 432 -22"/>
         <path d="M-46 656 C192 536 -76 326 94 206 S304 116 444 -4"/>
@@ -46,7 +47,26 @@
 <path d="M264 990 C614 780 284 765 459 565 S484 310 589 190"/>
 <path d="M278 1000 C628 790 298 775 473 575 S498 320 603 200"/>
 </g>
-      <g class="travelling" fill="none" stroke="#ffe7a9" stroke-width="3.8" stroke-linecap="round" stroke-dasharray="24 1200">
+<g class="filigree" fill="none" stroke="#fff0c5" stroke-opacity=".5" stroke-width=".55" transform="translate(-1.2,-1.2)">
+        <path d="M-70 620 C170 500 -100 290 70 170 S280 80 420 -40"/>
+        <path d="M-58 638 C181 518 -88 308 82 188 S292 98 432 -22"/>
+        <path d="M-46 656 C192 536 -76 326 94 206 S304 116 444 -4"/>
+        <path d="M-34 674 C203 554 -64 344 106 224 S316 134 456 14"/>
+        <path d="M-22 692 C214 572 -52 362 118 242 S328 152 468 32"/>
+        <path d="M180 930 C530 720 200 705 375 505 S400 250 505 130"/>
+        <path d="M194 940 C544 730 214 715 389 515 S414 260 519 140"/>
+        <path d="M208 950 C558 740 228 725 403 525 S428 270 533 150"/>
+        <path d="M222 960 C572 750 242 735 417 535 S442 280 547 160"/>
+      <path d="M-10 710 C225 590 -40 380 130 260 S340 170 480 50"/>
+<path d="M2 728 C236 608 -28 398 142 278 S352 188 492 68"/>
+<path d="M14 746 C247 626 -16 416 154 296 S364 206 504 86"/>
+<path d="M26 764 C258 644 -4 434 166 314 S376 224 516 104"/>
+<path d="M236 970 C586 760 256 745 431 545 S456 290 561 170"/>
+<path d="M250 980 C600 770 270 755 445 555 S470 300 575 180"/>
+<path d="M264 990 C614 780 284 765 459 565 S484 310 589 190"/>
+<path d="M278 1000 C628 790 298 775 473 575 S498 320 603 200"/>
+</g>
+      <g class="travelling" fill="none" stroke="#fff0bd" stroke-width="3.4" filter="url(#gold-glow)" stroke-linecap="round" stroke-dasharray="65 1135">
         <path pathLength="1200" d="M-46 656 C192 536 -76 326 94 206 S304 116 444 -4"/>
         <path pathLength="1200" d="M194 940 C544 730 214 715 389 515 S414 260 519 140"/>
 <path pathLength="1200" d="M-10 710 C225 590 -40 380 130 260 S340 170 480 50"/>
@@ -60,9 +80,6 @@
     <div class="blue-wash" aria-hidden="true"></div>
     <header class="masthead">
       <h1 id="name">Iro<span>.</span></h1>
-      <button class="motion-toggle" id="motion" type="button" aria-pressed="false" aria-label="Pause moving gold lines" title="Pause moving gold lines">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7v10M15 7v10"/></svg>
-      </button>
     </header>
     <section class="connect" aria-label="Contact Iro">
       <div class="contact-links">

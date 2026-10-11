@@ -34,11 +34,3 @@ save.addEventListener('click', () => {
   setTimeout(() => URL.revokeObjectURL(url), 10000);
   document.getElementById('status').textContent = 'Open the downloaded contact to save it.';
 });
-document.getElementById('motion').addEventListener('click', event => {
-  const paused = document.querySelector('.card').classList.toggle('paused');
-  const button = event.currentTarget;
-  button.setAttribute('aria-pressed', String(paused));
-  button.setAttribute('aria-label', paused ? 'Resume moving gold lines' : 'Pause moving gold lines');
-  button.title = button.getAttribute('aria-label');
-  button.querySelector('path').setAttribute('d', paused ? 'M9 6l8 6-8 6Z' : 'M9 7v10M15 7v10');
-});

@@ -18,7 +18,7 @@ You can preview locally by opening index.html. Photos, icons and scripts are inc
 
 ## Design and motion
 
-The circle at the top right pauses/resumes the moving gold lines. Reduced-motion preferences are respected. Animations are decorative; contact buttons remain still.
+Faster gold highlights run along layered metallic waves. Reduced-motion preferences are respected. Animations are decorative; contact buttons remain still.
 
 Your main original portrait is preserved. A vector mask keeps the gold waves behind your body; the sunset and motorbike photos have been removed. No third-party fonts, analytics or tracking. A Save contact button downloads a vCard after you add your details.
 
