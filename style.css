@@ -1,0 +1,33 @@
+:root{color-scheme:dark;--blue:#06152b;--gold:#e5c477;--cream:#f5ecdc}
+*{box-sizing:border-box}
+body{margin:0;height:100svh;padding:20px 16px;background:radial-gradient(ellipse at 50% 15%,#183553,#020813);color:var(--cream);font-family:Arial,Helvetica,sans-serif;display:grid;place-items:center}
+.card{position:relative;isolation:isolate;display:flex;flex-direction:column;width:min(100%,440px);height:calc(100svh - 40px);max-height:900px;overflow:hidden;border-radius:24px;background:var(--blue);border:1px solid #c8a5664a;box-shadow:0 30px 100px #0009}
+.photo-scene{position:absolute;inset:0;width:100%;height:100%;z-index:-3}
+.gold-lines{pointer-events:none}.filigree{animation:wave 4s ease-in-out infinite alternate;transform-origin:220px 425px}.contours path:nth-child(3n){stroke-width:3.1;opacity:.85}.contours path:nth-child(3n+1){stroke-width:1.5;opacity:.72}
+.contours{opacity:.8;animation:wave 4s ease-in-out infinite alternate;transform-origin:220px 425px}
+.travelling path{animation:travel 4s linear infinite}
+.travelling path:nth-child(2){animation-delay:-2s;animation-duration:5s}
+.travelling path:nth-child(3){animation-delay:-1s;animation-duration:3.5s}
+.travelling path:nth-child(4){animation-delay:-3s;animation-duration:4.5s}
+.travelling path:nth-child(5){animation-delay:-1.8s;animation-duration:3.8s}
+.travelling path:nth-child(6){animation-delay:-3.7s;animation-duration:5.5s}
+@keyframes travel{to{stroke-dashoffset:-1200}}
+@keyframes wave{to{transform:translate(-10px,14px) rotate(-2deg);opacity:.55}}
+.blue-wash{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#06152b44,transparent 70%),linear-gradient(to bottom,#06152b20 0%,#06152b05 45%,#06152b85 72%,#06152beb 100%)}
+.masthead{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;flex:none}
+h1{font-family:'Bodoni MT',Didot,'Times New Roman',serif;font-size:clamp(100px,27vw,128px);font-weight:400;letter-spacing:-6px;line-height:.88;margin:0;color:#edcd7b;text-shadow:0 3px 3px #0005,0 8px 28px #06152b88}
+.connect{position:relative;flex:none;margin:auto 30px 24px}
+.contact-links{border-top:1px solid #d8b87970}
+.contact-link{display:flex;align-items:center;gap:14px;min-height:80px;padding:10px 0;border-bottom:1px solid #d8b87970;color:var(--cream);text-decoration:none;transition:background .2s,color .2s}
+.icon{width:44px;height:44px;display:grid;place-items:center;flex:none;border:1px solid #d8b87985;border-radius:50%;background:#06152b50;color:var(--gold)}
+.icon svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}.icon .solid{stroke:none;fill:currentColor}
+.label{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}.link-title{font-size:20px;letter-spacing:.2px}.link-detail{font-size:21px;color:#eee5d9;overflow-wrap:anywhere;letter-spacing:.4px}.arrow{font-size:26px;color:var(--gold)}
+.contact-link:hover{color:#f9ddb0;background:#d8b87908}
+.save-contact{width:100%;height:50px;display:flex;justify-content:center;align-items:center;gap:10px;border:1px solid #d7b57290;background:linear-gradient(120deg,#d2b47c20,#d2b47c0c);color:#ecd2a1;border-radius:7px;font-size:18px;letter-spacing:.6px;margin-top:14px;cursor:pointer}
+.save-contact svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.save-contact:disabled{opacity:.45;cursor:default}
+.status{position:absolute;left:0;right:0;bottom:54px;background:#06152bf2;border-radius:6px;padding:6px;font-size:14px;line-height:1.5;color:#ddd2bf;margin:0;text-align:center}.status:empty{display:none}
+:focus-visible{outline:2px solid #f4d99d;outline-offset:5px}
+@media(max-width:480px){body{padding:0;background:var(--blue)}.card{width:100%;height:100svh;max-height:none;border-radius:0;border:0;box-shadow:none;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}}
+@media(max-height:700px){.masthead{padding:16px 24px}h1{font-size:clamp(90px,25vw,112px)}.connect{margin:auto 24px 18px}.contact-link{min-height:76px;padding:8px 0}.save-contact{margin-top:10px}}
+@media(max-height:560px){.masthead{padding:12px 24px}h1{font-size:clamp(78px,23vw,100px)}.contact-link{min-height:70px}.icon{width:40px;height:40px}.label{gap:3px}.save-contact{height:46px}.connect{margin-bottom:12px}}
+@media(prefers-reduced-motion:reduce){.gold-lines *{animation:none!important}.contact-link{transition:none}
