@@ -4,7 +4,7 @@ Deep blue, champagne gold, softly blended portrait, sunset and Sydney motorbike 
 
 ## Add your contact details
 
-Open `contact.js` in any text editor. Add your mobile number inside the phone quotes and your Instagram username inside the instagram quotes (without @). Keep the quotes. The links and Save contact button activate when valid details are supplied. No phone number or Instagram account has been guessed.
+Open `contact.js` in any text editor. Add your mobile number inside the phone quotes and your Instagram username inside the instagram quotes (without @). Keep the quotes. Both links and Save contact are active. Your supplied number and Instagram username are already configured.
 
 ## Upload to GitHub
 
@@ -21,3 +21,5 @@ You can preview locally by opening index.html. Photos, icons and scripts are inc
 The circle at the top right pauses/resumes the moving gold lines. Reduced-motion preferences are respected. Animations are decorative; contact buttons remain still.
 
 All three original photos are preserved and blended with CSS overlays. No third-party fonts, analytics or tracking. A Save contact button downloads a vCard after you add your details.
+
+The layout adapts to the phone’s available screen height, including Safari controls and safe areas. The portrait remains large while the name and contact rows overlay its lower fade. Seventeen gold curves and six travelling highlights animate across the photographs.
