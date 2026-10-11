@@ -1,6 +1,6 @@
 # Iro — animated NFC card
 
-Deep blue, champagne gold, softly blended portrait, sunset and Sydney motorbike photographs. Animated gold curves run across the photos. Mobile-friendly, no paid service or build step.
+Deep blue, champagne gold, full-page portrait and thicker animated gold waves behind the body. Mobile-friendly, no paid service or build step.
 
 ## Add your contact details
 
@@ -20,6 +20,6 @@ You can preview locally by opening index.html. Photos, icons and scripts are inc
 
 The circle at the top right pauses/resumes the moving gold lines. Reduced-motion preferences are respected. Animations are decorative; contact buttons remain still.
 
-All three original photos are preserved and blended with CSS overlays. No third-party fonts, analytics or tracking. A Save contact button downloads a vCard after you add your details.
+Your main original portrait is preserved. A vector mask keeps the gold waves behind your body; the sunset and motorbike photos have been removed. No third-party fonts, analytics or tracking. A Save contact button downloads a vCard after you add your details.
 
-The layout adapts to the phone’s available screen height, including Safari controls and safe areas. The portrait remains large while the name and contact rows overlay its lower fade. Seventeen gold curves and six travelling highlights animate across the photographs.
+The layout adapts to the phone’s available screen height, including Safari controls and safe areas. Your name appears at the top left in oversized cinematic gold serif lettering, with clickable contact links below the full-page portrait. Seventeen gold curves and six travelling highlights animate behind your body.
