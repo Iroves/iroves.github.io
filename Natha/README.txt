@@ -83,3 +83,11 @@ shop-data.js: saved public catalogue and local product-image mapping.
 
 This update was checked with source validation and checkout/price unit checks.
 An end-to-end browser/payment test has not been performed.
+
+DIRECT CONTACT
+Instagram links to https://www.instagram.com/Natha.tat.
+Email, phone and SMS links appear below the circular links. Email opens the
+visitor's configured email application; the address is also visible to copy.
+No message is sent automatically. Save contact includes the email address.
+Public email source: https://nathadotstore.com/policies/privacy-policy
+Email: nathalymelomanso@gmail.com
