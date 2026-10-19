@@ -1,0 +1,91 @@
+{
+  "retrieved": "2026-10-18",
+  "artist": "Nathaly / Natha.tat",
+  "websites": [
+    "https://nathatat.com/",
+    "https://nathadotstore.com/"
+  ],
+  "portraits": [
+    {
+      "file": "assets/nathaly-colour.webp",
+      "source": "https://nathadotstore.com/cdn/shop/files/ab1fe9aa-e934-449d-a912-028ad89fe77c.jpg?v=1778633783&width=1100"
+    },
+    {
+      "file": "assets/nathaly-studio.webp",
+      "source": "https://nathadotstore.com/cdn/shop/files/IMG_9710.jpg?v=1778646228&width=1100"
+    }
+  ],
+  "logo": {
+    "file": "assets/natha-logo.webp",
+    "source": "https://nathadotstore.com/cdn/shop/files/Logo-white-2-scaled-e1779065811488_1.png?v=1779146508&width=1100"
+  },
+  "gallery": [
+    {
+      "file": "assets/botanical-sleeve.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2999.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/bird-study.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7589-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/purple-blooms.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2361-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/colour-and-movement.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7586-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/jellyfish.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2150-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/everyday-ibis.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7574-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/leaves-and-linework.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2382-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/figure-in-blue.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7584-1-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/personal-symbols.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2248-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/botanical-geometry.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_4597-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/floral-shoulder.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_1193-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/heart-and-wings.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/IMG_7268-scaled.jpeg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    }
+  ],
+  "promotional_poster": {
+    "file": "assets/natha-poster-v1.png",
+    "method": "Built-in image generation: compositing / identity-preserve",
+    "composition_reference": "https://iroves.github.io/Gus/index.html",
+    "prompt_file": "POSTER-DESIGN.txt",
+    "portfolio_note": "Original portfolio photos are bundled separately and displayed in the gallery."
+  }
+}

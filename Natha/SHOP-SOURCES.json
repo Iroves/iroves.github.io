@@ -1,0 +1,186 @@
+{
+  "catalogue": "https://nathadotstore.com/products.json?limit=250",
+  "product_images": [
+    {
+      "id": "56511301321067",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/A556FC64-3A78-46FA-964B-B4B4FE43C51D.jpg?v=1783749268&width=1000&format=webp",
+      "path": "assets/shop/shop-56511301321067.webp",
+      "bytes": 455344
+    },
+    {
+      "id": "56511432032619",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/60A68890-2828-4AE0-98BE-9992C356FCF8.jpg?v=1783749742&width=1000&format=webp",
+      "path": "assets/shop/shop-56511432032619.webp",
+      "bytes": 378448
+    },
+    {
+      "id": "56511182405995",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/IMG-4710.heic?v=1783748624&width=1000&format=webp",
+      "path": "assets/shop/shop-56511182405995.webp",
+      "bytes": 252840
+    },
+    {
+      "id": "56511182340459",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/IMG-4714.heic?v=1783748624&width=1000&format=webp",
+      "path": "assets/shop/shop-56511182340459.webp",
+      "bytes": 277014
+    },
+    {
+      "id": "56511148261739",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/IMG-4708.heic?v=1783748355&width=1000&format=webp",
+      "path": "assets/shop/shop-56511148261739.webp",
+      "bytes": 281018
+    },
+    {
+      "id": "56511182373227",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/IMG-4711.heic?v=1783748624&width=1000&format=webp",
+      "path": "assets/shop/shop-56511182373227.webp",
+      "bytes": 296746
+    },
+    {
+      "id": "56511182438763",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/IMG-4715.heic?v=1783748624&width=1000&format=webp",
+      "path": "assets/shop/shop-56511182438763.webp",
+      "bytes": 371498
+    },
+    {
+      "id": "56511189483883",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/IMG-4715_4d8df0c1-5314-4c4b-81b3-708ea688d8e9.heic?v=1783748670&width=1000&format=webp",
+      "path": "assets/shop/shop-56511189483883.webp",
+      "bytes": 371498
+    },
+    {
+      "id": "56464980345195",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/DFC194D4-0ABC-46A5-B8B3-191BA250A256.jpg?v=1783579692&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980345195.webp",
+      "bytes": 256602
+    },
+    {
+      "id": "56464980148587",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/A4D295AB-68E0-4071-964A-D86874772154.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980148587.webp",
+      "bytes": 252244
+    },
+    {
+      "id": "56464980214123",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/F7FB65C5-FFEE-46BD-BFA5-566C2794BD25.jpg?v=1783579692&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980214123.webp",
+      "bytes": 241960
+    },
+    {
+      "id": "56464980312427",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/7B62F2E0-1330-4470-B77B-46978F0858C8.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980312427.webp",
+      "bytes": 253906
+    },
+    {
+      "id": "56464815358315",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/60892829-76A6-4F80-92BC-990FF77B09C0.jpg?v=1783579127&width=1000&format=webp",
+      "path": "assets/shop/shop-56464815358315.webp",
+      "bytes": 274036
+    },
+    {
+      "id": "56464980476267",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/8A41D2C0-B3DD-48F8-BE38-8B35683B3F16.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980476267.webp",
+      "bytes": 256176
+    },
+    {
+      "id": "56464815391083",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/BE22FDF1-DB92-466A-ABEF-79AB2E937671.jpg?v=1783579127&width=1000&format=webp",
+      "path": "assets/shop/shop-56464815391083.webp",
+      "bytes": 156034
+    },
+    {
+      "id": "56464980509035",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/B2CE6D7D-3AA0-4DD6-9DAC-9C3110A3FDDF.jpg?v=1783579692&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980509035.webp",
+      "bytes": 285174
+    },
+    {
+      "id": "56464980410731",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/0E25FAB3-49F7-4927-9E49-41753D1B3E52.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980410731.webp",
+      "bytes": 259368
+    },
+    {
+      "id": "56464980181355",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/5496AD75-E5C3-4B89-8F29-41B16983BEB1.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980181355.webp",
+      "bytes": 284588
+    },
+    {
+      "id": "56464980443499",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/D42FA92C-97C7-4B38-B2A4-0D564B280DB8.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980443499.webp",
+      "bytes": 295904
+    },
+    {
+      "id": "56464980377963",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/A505B938-C356-4DE6-8B2D-B86BB484B13D.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980377963.webp",
+      "bytes": 304326
+    },
+    {
+      "id": "56464980279659",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/C09344CD-1FCD-4C75-A9B3-D52F476368CE.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980279659.webp",
+      "bytes": 265018
+    },
+    {
+      "id": "56464980541803",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/3D4D4C4D-03CB-4A64-8C62-695957715F85.jpg?v=1783579692&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980541803.webp",
+      "bytes": 253518
+    },
+    {
+      "id": "56464980246891",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/49D3F8AE-75B4-40E4-A9FB-47E729EC97C2.jpg?v=1783579691&width=1000&format=webp",
+      "path": "assets/shop/shop-56464980246891.webp",
+      "bytes": 245656
+    },
+    {
+      "id": "56464815423851",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/920D4567-1486-4C55-B574-26FE18B061C4.jpg?v=1783579127&width=1000&format=webp",
+      "path": "assets/shop/shop-56464815423851.webp",
+      "bytes": 303168
+    },
+    {
+      "id": "55967886606699",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/Paintt.png?v=1778543951&width=1000&format=webp",
+      "path": "assets/shop/shop-55967886606699.webp",
+      "bytes": 61646
+    },
+    {
+      "id": "55968047169899",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/JPG4.jpg?v=1778546234&width=1000&format=webp",
+      "path": "assets/shop/shop-55968047169899.webp",
+      "bytes": 203142
+    },
+    {
+      "id": "55967886639467",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/Paint2.png?v=1778543952&width=1000&format=webp",
+      "path": "assets/shop/shop-55967886639467.webp",
+      "bytes": 22766
+    },
+    {
+      "id": "55967878250859",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/painting2.jpg?v=1778543690&width=1000&format=webp",
+      "path": "assets/shop/shop-55967878250859.webp",
+      "bytes": 183660
+    },
+    {
+      "id": "55967878283627",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/painting1.jpg?v=1778543690&width=1000&format=webp",
+      "path": "assets/shop/shop-55967878283627.webp",
+      "bytes": 288940
+    },
+    {
+      "id": "55968047104363",
+      "source": "https://cdn.shopify.com/s/files/1/0917/7242/0459/files/JPG2.png?v=1778546233&width=1000&format=webp",
+      "path": "assets/shop/shop-55968047104363.webp",
+      "bytes": 30482
+    }
+  ],
+  "animation_reference": "https://iroves.github.io/Gus/styles.css"
+}
