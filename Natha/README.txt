@@ -84,10 +84,30 @@ shop-data.js: saved public catalogue and local product-image mapping.
 This update was checked with source validation and checkout/price unit checks.
 An end-to-end browser/payment test has not been performed.
 
-DIRECT CONTACT
-Instagram links to https://www.instagram.com/Natha.tat.
-Email, phone and SMS links appear below the circular links. Email opens the
-visitor's configured email application; the address is also visible to copy.
-No message is sent automatically. Save contact includes the email address.
-Public email source: https://nathadotstore.com/policies/privacy-policy
-Email: nathalymelomanso@gmail.com
+DIRECT CONTACT — FORMSUBMIT
+The Contact Nathaly buttons now open an enquiry form inside the card.
+FormSubmit delivers submissions independently of Shopify. Name, email, topic
+and message go to nathalymelomanso@gmail.com through FormSubmit.
+The destination is not printed in the interface but is visible in source.
+No email application, Instagram or WhatsApp is needed for this form.
+
+REQUIRED BEFORE CLIENT USE
+Submit a clearly labelled setup test through the hosted page. FormSubmit sends
+an activation email to Nathaly; she must confirm it in her inbox (check spam).
+Until confirmed, submissions may be held by FormSubmit rather than delivered.
+Do not advertise the form as ready before a real delivery-and-reply test passes.
+After activation and receipt are verified, remove the contact-setup notice in
+index.html. No activation request or real message was sent during development.
+Publishing under a new domain can require activation again.
+
+contact.js sends using the documented FormSubmit AJAX endpoint and keeps users
+on the card page. It checks service responses and preserves fields on failure.
+If JavaScript is disabled, normal form POST opens FormSubmit instead.
+The form includes a honeypot; service spam checks may require additional steps.
+Timeouts leave delivery uncertain; check before retrying to avoid duplicates.
+FormSubmit documents retaining submissions for 30 days.
+https://formsubmit.co/ajax-documentation
+https://formsubmit.co/help
+
+No Shopify contact links are used. Call and SMS remain available.
+Browser and real delivery testing remain outstanding.

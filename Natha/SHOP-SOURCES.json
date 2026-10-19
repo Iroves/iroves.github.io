@@ -183,8 +183,5 @@
     }
   ],
   "animation_reference": "https://iroves.github.io/Gus/styles.css",
-  "contact_email": {
-    "address": "nathalymelomanso@gmail.com",
-    "source": "https://nathadotstore.com/policies/privacy-policy"
-  }
+  "contact_form": "Built-in form using FormSubmit; independent of Shopify"
 }
