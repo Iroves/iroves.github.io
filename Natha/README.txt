@@ -1,113 +1,147 @@
-NATHA.TAT — NFC DIGITAL CARD
+NATHA.TAT — TATTOOS, ART & THE ARTIST
 
-A poster-led digital card for Nathaly, inspired by the integrated photo-and-art
-collage on the Gus reference page. It has a large artist poster, flowing colour
-and light overlays, a gallery, a searchable shop and Shopify checkout.
+A tattoo-first NFC website with separate pages for the portfolio, Nathaly’s
+background, art and products. The NFC tag opens index.html at its hosted URL.
 
-OPEN THE CARD
-Open index.html to review the design. Keep all files and folders together.
-Booking, social links and the shop use an internet connection.
+PAGES
+index.html — poster, introduction, selected tattoos and clear routes onward.
+tattoos.html — 24 tattoo photographs across 7 style filters.
+about.html — Nathaly’s technical drawing background, studies and art practice.
+art.html — 6 selected artworks, separate from the products for sale.
+shop.html — 25 saved public products, refreshed from the live Shopify catalogue.
 
-PUBLISH WITH GITHUB PAGES
-1. Unzip this folder.
-2. Upload index.html, the CSS and JavaScript files, natha-tat.vcf and assets to
-   the root of your chosen repository. Keep the assets subfolders together.
-3. In the repository, open Settings > Pages and publish from the main branch.
-4. Open the published address on a phone.
-5. Write that published address to the NFC tag as a website URL.
+BACKGROUND
+The biography follows Nathaly’s own messages supplied on 20 October 2026.
+It describes three years studying engineering and one year studying architecture.
+It does not claim completed degrees, professional registration or completed
+large installations. Larger installations are a future creative ambition.
+No dates, qualifications, commissions or testimonials were invented.
 
-The exported card is a static website. It has no sign-in system or subscription.
-The separate design-review preview is private to its owner.
+DESIGN & PERFORMANCE
+The existing colourful artist poster and Gus-style flash lines are preserved.
+The original 3.3 MB poster is served as responsive WebP files of roughly
+221 KB (640px) or 409 KB (941px), selected according to screen and resolution.
+Gallery and product grids use small thumbnails with lazy loading. Full photos
+load when opened. Decorative background images are tiny blurred variants.
+The shop catalogue and shopping scripts load only on shop.html.
+The high-resolution poster master is preserved in the source repository under
+source-assets/natha-poster-v1.png and is not part of the served download.
 
-EDIT THE CARD
-- index.html: visible text, booking and social links, phone and studio address.
-- styles.css: shared layout and dialogs.
-- poster.css: poster composition, circular links and flowing motion.
-- POSTER-DESIGN.txt: generation mode, reference images and final poster prompt.
-- assets/natha-poster-v1.png: generated promotional poster.
-- card-data.js: gallery images, categories and descriptive captions.
-- natha-tat.vcf: contact details saved to the visitor's phone.
-- assets/: bundled photos, artwork, logo and fonts.
+TATTOO STYLES
+Botanical & colour, Cover-up, Cross hatching, Fine line, Fine old school,
+Fun & meaningful, Pets & symbolism. Categories follow the original portfolio.
+Captions are descriptive labels and do not claim to be official artwork titles.
+All work photographs are separate from the generated promotional poster.
+Gallery images open in a lightbox with arrows, keyboard and swipe navigation.
 
-When publishing under a different address, update or remove the og:url metadata
-in index.html and point og:image at a publicly reachable image on that address.
+CONTACT
+Instagram: https://www.instagram.com/Natha.tat
+Booking: https://venue.ink/@natha.tat
+Phone/SMS: +61 426 930 105
+WhatsApp: https://wa.me/61426930105
+Contact buttons open a form inside the card. FormSubmit delivers enquiries
+independently of Shopify to nathalymelomanso@gmail.com.
+The address is not printed in the interface but is visible in source.
 
-GALLERY
-The four circular buttons open the built-in work gallery and shop, Instagram
-and WhatsApp. Tap the main poster to view the built-in gallery of original photos.
-The main poster is a generated promotional composite.
-Tap an image to enlarge it. Swipe left or right, use the arrows, or use keyboard
-arrow keys to browse. Escape or the close button returns to the gallery.
-Tap MEET NATHALY to read about Nathaly and open studio directions.
+CONTACT ACTIVATION — STILL REQUIRED
+No real enquiry or activation email was sent during development. Submit one
+clearly labelled setup test through the hosted site. Nathaly must confirm the
+FormSubmit activation email in her inbox (check spam). Verify delivery and
+reply before sharing the form with clients, then remove the contact-setup note
+in each HTML file and update the activation wording in contact.js.
+A different hosted domain may require activation again.
+FormSubmit documentation: https://formsubmit.co/help
 
-PAYID
-The Pay by PayID button opens bank-transfer instructions for art purchases.
-The WhatsApp button prepares a message asking Nathaly to confirm the item,
-price, delivery, registered PayID and order reference. The customer sends it.
-Nathaly confirms each payment after checking her bank account.
-Her phone number is used for contact; it has not been presented as a registered
-PayID. Direct copy-and-pay details can be added after her PayID is confirmed.
-
-ACCESSIBILITY
-Colour overlays and highlights flow continuously across the poster. The card follows the phone's reduced-motion setting. Dialogs
-use native focus management, and controls include labels for screen readers.
-
-CREDITS AND SOURCES
-Nathaly / Natha.tat — photographs, original logo, tattoos and artwork.
-https://nathatat.com/
-https://nathadotstore.com/
-The image source links are retained in ASSET-SOURCES.json.
-Gallery captions describe the visible work; they are not official product titles.
-DM Sans and Cormorant Garamond: font licences are included in assets/fonts/.
-
-VERIFICATION
-Local asset references, images, JavaScript syntax, gallery data, and contact
-file structure were checked. A mobile-browser visual check is still needed.
-
-SHOPIFY SHOP
-The shop includes all 25 public products captured from nathadotstore.com and
-refreshes from its public Shopify product catalogue when online. A saved
-catalogue with bundled product photos is included if refresh is unavailable.
-Shopify confirms final stock, prices, taxes, shipping and payment options.
-Product selection and the bag use the real Shopify variant IDs. Buy now and
-checkout redirect to her existing store using Shopify cart permalinks.
-There is no payment processing or order confirmation in this static card.
-Bag selections are stored locally on each visitor's device.
+SHOP & PAYMENTS
+The existing Shopify account handles stock, order processing and checkout.
+The custom card sends the actual variant IDs and quantities to her checkout.
+Shopify confirms current prices, availability, taxes, shipping and payment.
+Saved catalogue fallback is included if the live refresh is unavailable.
 The T shirt listing currently has no merchant product photo.
+The bag is stored locally on each visitor’s device. No payment is processed
+or marked as successful by the card itself.
+PayID is a secondary manual enquiry in the shop. No registered PayID is assumed.
 
-SHOP FILES
-hub.css: shop/gallery layout and the Gus flash-line and light-sweep animation.
-hub.js: browsing, live catalogue refresh, product details and shopping bag.
-shop-core.js: prices, catalogue normalisation and checkout-link validation.
-shop-data.js: saved public catalogue and local product-image mapping.
+PUBLISHING
+Keep every HTML, CSS, JavaScript, contact file and assets folder together.
+Publish the contents of this ZIP on static hosting that permits commercial
+sites. GitHub can store the source; GitHub Pages restricts ecommerce hosting.
+Connect the chosen domain and update og:url and og:image in all five pages.
+Write that final public website URL to the NFC tag.
+The separate design-review preview remains private to its owner.
+Previously shared #tattoos, #shop, #about and #art home links redirect to the
+corresponding new page. Internal navigation uses direct page links.
 
-This update was checked with source validation and checkout/price unit checks.
-An end-to-end browser/payment test has not been performed.
+MAINTENANCE
+card-data.js — portfolio photographs and styles.
+portfolio-core.js / portfolio.js — filtering, previews and lightbox.
+app.js — dialogs, sharing and legacy links.
+portfolio.css — new page structure and typography.
+styles.css / poster.css / hub.css — shared theme, poster and shop.
+shop-data.js / shop-core.js / hub.js — catalogue, bag and checkout.
+contact.js — enquiry submission and service-response handling.
+ASSET-SOURCES.json / SHOP-SOURCES.json — photography and catalogue provenance.
+POSTER-DESIGN.txt — original generated-poster brief.
 
-DIRECT CONTACT — FORMSUBMIT
-The Contact Nathaly buttons now open an enquiry form inside the card.
-FormSubmit delivers submissions independently of Shopify. Name, email, topic
-and message go to nathalymelomanso@gmail.com through FormSubmit.
-The destination is not printed in the interface but is visible in source.
-No email application, Instagram or WhatsApp is needed for this form.
+CHECKS
+All local routes, fragment links, labels, dialog targets and image references
+were checked. The 7 style filters, category separation, lightbox wraparound,
+product thumbnail paths, AUD totals and multi-item checkout URLs were checked.
+JavaScript syntax and all WebP files passed validation.
+Browser visual QA, real message delivery and payment completion remain untested.
+No form submission or payment was made during checks.
 
-REQUIRED BEFORE CLIENT USE
-Submit a clearly labelled setup test through the hosted page. FormSubmit sends
-an activation email to Nathaly; she must confirm it in her inbox (check spam).
-Until confirmed, submissions may be held by FormSubmit rather than delivered.
-Do not advertise the form as ready before a real delivery-and-reply test passes.
-After activation and receipt are verified, remove the contact-setup notice in
-index.html. No activation request or real message was sent during development.
-Publishing under a new domain can require activation again.
+CREDITS
+Nathaly / Natha.tat — photographs, original art and tattoos.
+https://nathatat.com/portfolio/
+https://nathadotstore.com/
+DM Sans and Cormorant Garamond licences are included in assets/fonts/.
 
-contact.js sends using the documented FormSubmit AJAX endpoint and keeps users
-on the card page. It checks service responses and preserves fields on failure.
-If JavaScript is disabled, normal form POST opens FormSubmit instead.
-The form includes a honeypot; service spam checks may require additional steps.
-Timeouts leave delivery uncertain; check before retrying to avoid duplicates.
-FormSubmit documents retaining submissions for 30 days.
-https://formsubmit.co/ajax-documentation
-https://formsubmit.co/help
+OFFICIAL LOGO
+The white logo supplied by Iro is used in the home introduction, inner-page
+headers and footer. It is the original unmodified transparent PNG.
+Source and provenance are recorded in ASSET-SOURCES.json.
+The promotional poster is preserved as previously approved.
 
-No Shopify contact links are used. Call and SMS remain available.
-Browser and real delivery testing remain outstanding.
+STUDIO ADDRESS
+Understairs Ink
+Shop 7 & 8, 60 Applebee Street, St Peters NSW 2044
+https://maps.app.goo.gl/4BwaLYTXd6XYP9GZA?g_st=ic
+Updated across contact sections and Save contact.
+
+POSTER LOGO UPDATE
+The official white logo is now integrated into the main poster’s lower black
+brush band. The separate duplicate logo above the home introduction was removed.
+Inner page headers and all footers retain the original official PNG.
+Source masters are preserved; the site serves small responsive WebP variants.
+
+The final poster uses a cleaned black brush band with the actual official PNG
+layered into it responsively in HTML/CSS. The white logo is not a generated
+approximation; it remains the original image file.
+
+SELF-SERVICE PRODUCT EDITING
+Nathaly can edit photos, title, price, description, variants and availability
+in Shopify Admin > Products, then Save. The shop reads the public catalogue
+on opening and when Refresh is pressed. New products must be published to
+the Online Store sales channel to appear in that public catalogue.
+Live listings use current image URLs with appropriately sized thumbnails.
+Bundled photographs are used only with the saved fallback catalogue if the
+live refresh fails. Name, price and description changes require no code edits.
+The poster, biography, art/tattoo portfolio and layout do not have an admin
+editor in this version.
+
+LATEST POSTER REFINEMENT
+The shirt now has a small dark X emblem on the wearer’s left chest.
+The original official white wordmark is larger and angled into the black
+brush shadow, with subtle pink and turquoise accents. The source PNG is
+rendered through an SVG viewBox so the real lettering stays unchanged.
+The site uses assets/natha-poster-shirt-640.webp and -941.webp; prior masters
+remain preserved in source control.
+
+CLIENT BRAND FILES — LATEST
+The shirt symbol is now the exact uploaded X.jpg, blended with the shirt
+fabric. The lower poster branding uses the complete uploaded natha.png,
+including its emblem and serif name, at a -9 degree angle matching the nearby
+lettering. Screen blending keeps its dark field seamless in the black brush
+shadow. The same uploaded logo is used in inner-page headers and footers.
+The earlier logo assets are retained but no longer displayed.
