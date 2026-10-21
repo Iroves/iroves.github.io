@@ -1,0 +1,67 @@
+NATHA.TAT — POSTER DESIGN
+
+Mode: built-in image generation, compositing / identity-preserve.
+Project asset: assets/natha-poster-v1.png
+Style reference: https://iroves.github.io/Gus/index.html
+Supporting images: assets/nathaly-colour.webp, assets/bird-study.webp, assets/colour-and-movement.webp, assets/botanical-sleeve.webp.
+
+This is a generated promotional collage based on the supplied photograph and artwork. The gallery displays the separately bundled original portfolio photos.
+
+FINAL PROMPT
+
+Use case: compositing, identity-preserve. Asset type: a polished vertical 9:16 artist-poster collage for an NFC digital business card.
+Input roles: Image 1 is the STYLE AND COMPOSITION reference only (the Gus poster). Do NOT include that man, his artworks, his name, Manly, palm trees or sunglasses. Image 2 is the artist Nathaly and is the identity/pose reference. Images 3 and 4 are her actual paintings to incorporate. Image 5 is her actual botanical tattoo photograph to incorporate as a small editorial photo inset.
+Create the equivalent poster for NATHA.TAT. Main subject: the same real woman from image 2, prominent and large at the centre, keeping her original downward-looking pose, exact face, multicoloured cap, short dark hair, white sleeveless top, hands, body proportions and existing arm tattoos. Preserve the photo as faithfully as possible; do not invent a different face or redraw her tattoos.
+Composition: integrated, immersive artist collage like image 1, not a layout of separate UI cards. Place her supplied colourful bird painting upper right and her supplied pink-and-green botanical painting upper left, partly behind her silhouette. Include the supplied botanical tattoo photo detail as an angled photographic fragment toward the lower left. The artworks should remain recognisable reproductions of the supplied work, not new invented portfolio pieces. Blend cut paper, paint strokes, hand-drawn botanical linework and the edges of the art into a richly layered background. Let her head and shoulders overlap the artworks, with real photographic skin texture and a confident editorial poster feel. No chunky round photo border; no yellow flat screen; no sticker-button UI.
+Style: warm cream paper, rich charcoal ink, saturated teal/turquoise, coral and hot pink brushstrokes, some lilac from her work, energetic handmade creative branding. Match the reference's integrated composition and large central person, adapted to her own art. High resolution portrait 9:16. The overall image must be readable on a phone.
+Text, accurately and verbatim: a smaller cream brush-script line "INK & ART", a very large expressive hot-pink brush-painted headline "NATHA.TAT" across the lower third, "@natha.tat" on a turquoise brush stroke below, small clear "TATTOOS • ILLUSTRATION • ORIGINAL ART", and handwritten "Sydney" near the bottom. Do not use any other person's or location's name. No QR code, prices, checkout buttons, fabricated testimonials or extra people.
+
+
+
+20 OCTOBER 2026 — OFFICIAL LOGO EDIT
+Built-in image generation, precise-object-edit / identity-preserve mode.
+References: original poster master and official white transparent PNG logo.
+Replace the lower hot-pink NATHA.TAT lettering with the supplied white emblem
+and wordmark, integrated into the black brush band. Preserve the portrait,
+tattoos, cap, art collage, remaining wording and layout.
+Original master is retained as source-assets/natha-poster-v1.png.
+Edited master: source-assets/natha-poster-clean-v2.png.
+The served files are optimised responsive WebP variants.
+
+FINAL COMPOSITION: the generated image only clears the old pink wordmark.
+The unchanged official PNG is positioned as a responsive HTML/CSS layer inside
+the poster frame (top 71.2%, left 21%, width 58%, rotation -4 degrees).
+This preserves the actual official logo instead of a generated approximation.
+The first logo-redraw concept was discarded.
+
+
+20 OCTOBER — SHIRT X AND WORDMARK PLACEMENT
+Built-in image generation: precise-object-edit / identity-preserve.
+Target: source-assets/natha-poster-clean-v2.png.
+Reference: official transparent PNG for the distinctive woven X emblem.
+Add a small charcoal X to the wearer’s left chest, following the shirt folds.
+Refine the lower black shadow with restrained magenta and turquoise strokes.
+Keep face, tattoos, hands, cap, paintings, framing and remaining text intact.
+Output master: source-assets/natha-poster-shirt-v3.png.
+Wordmark remains the original PNG, cropped non-destructively through an SVG
+viewBox and placed larger at a -5 degree angle on the black shadow, with a
+small split-colour brush underline. It is not generated lettering.
+The earlier logo-layer position is superseded by .poster-brand-lockup.
+
+
+LATEST — CLIENT-SUPPLIED X AND FULL LOGO
+User attachments natha.png and X.jpg are copied unchanged into assets.
+Built-in image generation removes the previous shirt emblem and preserves
+the fabric and poster. The supplied X.jpg is placed on the shirt through
+responsive HTML/CSS with multiply blending, so the exact symbol is retained.
+The supplied full logo uses screen blending to remove its black field visually
+and follows the nearby lettering at -9 degrees. Prior cropped-wordmark
+placement is superseded. Source master: natha-poster-client-v4.png.
+
+
+PINK LETTERING UPDATE
+Built-in image generation local colour edit: recolour only INK & ART to hot
+pink, preserving lettering shape, placement and poster composition.
+Source master: source-assets/natha-poster-pink-v5.png.
+The website retains the same responsive image filenames with a pink1 cache
+version in index.html. Exact supplied shirt X and logo remain unchanged.
