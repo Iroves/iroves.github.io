@@ -1,0 +1,83 @@
+/* Painted action links, carrying the poster's ink and colour into navigation. */
+.home-page .paint-actions {
+  gap: 12px;
+  padding: 2px 3px;
+  margin-top: 24px;
+}
+.home-page .paint-action {
+  --paint: #ff408d;
+  --slant: -1.3deg;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 82px;
+  padding: 18px 26px 18px 30px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #071a25;
+  text-decoration: none;
+  transform: rotate(var(--slant));
+  transition: transform 180ms ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.home-page .paint-action::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--paint);
+  -webkit-mask: url("assets/action-paint.svg") center / 100% 100% no-repeat;
+  mask: url("assets/action-paint.svg") center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+.home-page .paint-action--book { min-height: 92px; }
+.home-page .paint-action--ink { --paint: #3bc9b9; --slant: 1deg; }
+.home-page .paint-action--art { --paint: #f4d26d; --slant: -0.8deg; }
+.home-page .paint-action--care { --paint: #f6e9cf; --slant: 0.9deg; }
+.home-page .paint-action--ink::before,
+.home-page .paint-action--care::before { transform: scaleX(-1); }
+.home-page .paint-action strong {
+  flex: 1;
+  min-width: 0;
+  font-size: clamp(16px, 4.8vw, 21px);
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.home-page .paint-action--book strong { font-size: clamp(19px, 5.2vw, 25px); }
+.paint-action-icon,
+.paint-action-arrow {
+  display: block;
+  flex: 0 0 auto;
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.paint-action-arrow { width: 24px; height: 24px; transform: rotate(-6deg); }
+.home-page .paint-action:focus-visible { outline: 2px dashed #f6e9cf; outline-offset: 5px; }
+.home-page .paint-action:active { transform: rotate(0) scale(0.98); }
+@media (hover: hover) and (pointer: fine) {
+  .home-page .paint-action:hover { transform: translateY(-2px) rotate(0) scale(1.015); }
+}
+@media (max-width: 600px) {
+  .home-page .paint-actions { gap: 10px; margin-top: 20px; }
+  .home-page .paint-action { min-height: 77px; padding: 16px 21px 16px 24px; gap: 11px; }
+  .home-page .paint-action--book { min-height: 85px; }
+  .paint-action-icon { width: 24px; height: 24px; }
+  .paint-action-arrow { width: 22px; height: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .paint-action,
+  .home-page .paint-action:hover,
+  .home-page .paint-action:active { transition: none; transform: none; }
+}

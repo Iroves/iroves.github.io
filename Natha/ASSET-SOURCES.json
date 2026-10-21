@@ -1,0 +1,279 @@
+{
+  "retrieved": "2026-10-18",
+  "artist": "Nathaly / Natha.tat",
+  "websites": [
+    "https://nathatat.com/",
+    "https://nathadotstore.com/"
+  ],
+  "portraits": [
+    {
+      "file": "assets/nathaly-colour.webp",
+      "source": "https://nathadotstore.com/cdn/shop/files/ab1fe9aa-e934-449d-a912-028ad89fe77c.jpg?v=1778633783&width=1100"
+    },
+    {
+      "file": "assets/nathaly-studio.webp",
+      "source": "https://nathadotstore.com/cdn/shop/files/IMG_9710.jpg?v=1778646228&width=1100"
+    }
+  ],
+  "logo": {
+    "file": "assets/natha-logo.webp",
+    "source": "https://nathadotstore.com/cdn/shop/files/Logo-white-2-scaled-e1779065811488_1.png?v=1779146508&width=1100"
+  },
+  "gallery": [
+    {
+      "file": "assets/botanical-sleeve.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2999.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/bird-study.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7589-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/purple-blooms.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2361-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/colour-and-movement.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7586-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/jellyfish.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2150-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/everyday-ibis.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7574-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/leaves-and-linework.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2382-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/figure-in-blue.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/REN_7584-1-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/personal-symbols.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2248-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/botanical-geometry.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_4597-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/floral-shoulder.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_1193-scaled.jpg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/heart-and-wings.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/05/IMG_7268-scaled.jpeg",
+      "label_note": "Descriptive display label, not an official artwork title."
+    },
+    {
+      "file": "assets/portfolio/style-3-1.webp",
+      "thumbnail": "assets/portfolio/style-3-1-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2307-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Cover-up",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-3-2.webp",
+      "thumbnail": "assets/portfolio/style-3-2-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2298-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Cover-up",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-3-3.webp",
+      "thumbnail": "assets/portfolio/style-3-3-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_2303-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Cover-up",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-5-1.webp",
+      "thumbnail": "assets/portfolio/style-5-1-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/4DC1880C-D60D-4283-8301-8504FC057E3F-1.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Cross hatching",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-5-2.webp",
+      "thumbnail": "assets/portfolio/style-5-2-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_7475-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Cross hatching",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-5-3.webp",
+      "thumbnail": "assets/portfolio/style-5-3-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_4538.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Cross hatching",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-6-1.webp",
+      "thumbnail": "assets/portfolio/style-6-1-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/fafcf725-f484-4217-9fda-bc28c4b160ef.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fine line",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-6-2.webp",
+      "thumbnail": "assets/portfolio/style-6-2-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/AF8C7A2B-4AC3-4C98-8F88-2F7E1185DE11.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fine line",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-6-3.webp",
+      "thumbnail": "assets/portfolio/style-6-3-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/C5421638-BD02-481A-9D7C-213AA0B4A0D6.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fine line",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-7-1.webp",
+      "thumbnail": "assets/portfolio/style-7-1-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_56271-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fine old school",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-7-2.webp",
+      "thumbnail": "assets/portfolio/style-7-2-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_0703.png",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fine old school",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-7-3.webp",
+      "thumbnail": "assets/portfolio/style-7-3-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_4655.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fine old school",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-8-1.webp",
+      "thumbnail": "assets/portfolio/style-8-1-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/DSC01407-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fun & meaningful",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-8-2.webp",
+      "thumbnail": "assets/portfolio/style-8-2-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_6803_jpg-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fun & meaningful",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-8-3.webp",
+      "thumbnail": "assets/portfolio/style-8-3-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/IMG_5173-1-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Fun & meaningful",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-9-1.webp",
+      "thumbnail": "assets/portfolio/style-9-1-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/DD344FA1-4618-4014-BC0A-CDC0C4A965E6.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Pets & symbolism",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-9-2.webp",
+      "thumbnail": "assets/portfolio/style-9-2-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/77b08c04-541b-45a3-b320-6b777611b9a2-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Pets & symbolism",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    },
+    {
+      "file": "assets/portfolio/style-9-3.webp",
+      "thumbnail": "assets/portfolio/style-9-3-thumb.webp",
+      "source": "https://nathatat.com/wp-content/uploads/2026/02/D9CE44B0-4927-48B5-844D-87E0C32D08BE-scaled.jpg",
+      "style_source": "https://nathatat.com/portfolio/",
+      "style": "Pets & symbolism",
+      "label_note": "Style follows the original portfolio. Caption is descriptive."
+    }
+  ],
+  "promotional_poster": {
+    "file": "assets/natha-poster-client-941.webp",
+    "method": "Built-in image generation: compositing / identity-preserve",
+    "composition_reference": "https://iroves.github.io/Gus/index.html",
+    "prompt_file": "POSTER-DESIGN.txt",
+    "portfolio_note": "Original portfolio photos are bundled separately and displayed in the gallery.",
+    "master_in_source": "source-assets/natha-poster-pink-v5.png",
+    "delivery_variants": [
+      "assets/natha-poster-client-640.webp",
+      "assets/natha-poster-client-941.webp"
+    ],
+    "logo_edit": {
+      "method": "Built-in image generation edit",
+      "reference_poster": "source-assets/natha-poster-v1.png",
+      "logo": "assets/natha-official-logo.png",
+      "request": "Remove only the old pink wordmark through image generation; layer the unchanged official PNG over the cleared black brush band using CSS."
+    },
+    "logo_layer": "assets/natha-client-logo.png",
+    "logo_layer_note": "Exact uploaded natha.png, full emblem and wordmark, angled -9 degrees and screen blended into the black brush shadow.",
+    "shirt_edit": {
+      "method": "Built-in image generation removes the old shirt mark; original uploaded X.jpg is then layered over the shirt using multiply blending.",
+      "reference": "User-supplied X.jpg, 20 October 2026",
+      "file": "assets/natha-client-x.jpg",
+      "note": "The final shirt symbol is the uploaded file, not a generated approximation."
+    },
+    "colour_edit": "Built-in image generation: changed only INK & ART lettering from cream to hot pink; actual client logo and shirt X remain separate unchanged image layers."
+  },
+  "biography_source": "Nathaly\u2019s own messages supplied by Iro on 20 October 2026",
+  "official_logo": {
+    "file": "assets/natha-official-logo.png",
+    "source": "https://nathadotstore.com/cdn/shop/files/Logo-white-2-scaled-e1779065811488_1.png?v=1779146508&width=390",
+    "note": "Unmodified official logo supplied by Iro on 20 October 2026; used on the home introduction, inner-page home links and footer."
+  },
+  "studio": {
+    "name": "Understairs Ink",
+    "address": "Shop 7 & 8, 60 Applebee Street, St Peters NSW 2044",
+    "maps": "https://maps.app.goo.gl/4BwaLYTXd6XYP9GZA?g_st=ic",
+    "source": "Location link supplied by Iro on 20 October 2026 and resolved to Google Maps place query."
+  },
+  "client_brand_files": [
+    {
+      "file": "assets/natha-client-logo.png",
+      "source": "User attachment natha.png",
+      "library_file_id": "libfile_1a30d49c433c81918f97e656c2589824"
+    },
+    {
+      "file": "assets/natha-client-x.jpg",
+      "source": "User attachment X.jpg",
+      "library_file_id": "libfile_067cbf98585c8191b653d61dfeca8b76"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+NATHA.TAT — OWNER GUIDE
+21 October 2026
+
+THE NEW FLOW
+Clients tap the NFC card, view your site and send a tattoo request directly.
+You review their idea and dates, agree on the work, send deposit instructions,
+verify the payment and confirm the appointment yourself.
+The client pages no longer use an external booking platform.
+This is a manual approval flow, not an automatic calendar or booking database.
+Existing appointments and deposits remain wherever you originally arranged them.
+
+1. RECEIVING REQUESTS AND REFERENCE PICTURES
+Book collects the client’s details, idea, placement, size, preferred dates and
+payment preference. Both Book and the general enquiry form accept optional
+photos/PDFs: up to three files, 9 MB combined. Files are sent through FormSubmit
+to your inbox; they are not saved in the public website folder.
+The WhatsApp button prepares the request as text. Clients attach their pictures
+in WhatsApp themselves. Email is the route that includes selected form files.
+
+2. ACTIVATE EMAIL BEFORE RELYING ON IT
+The receiving email is nathalymelomanso@gmail.com. Submit a labelled setup test
+on your final hosted domain, confirm FormSubmit’s activation email and verify
+that a request and a harmless attachment arrive correctly. No activation email
+or test message was sent during development. Calls, SMS and WhatsApp are available
+while setup is pending. Once verified, update the activation wording in the HTML
+pages and contact.js. Keep the final domain in the setup/delivery check.
+
+3. AGREE ON THE BOOKING BEFORE TAKING A DEPOSIT
+Review the idea and reference images. Agree on the session date, an estimated
+price range, deposit amount and the applicable cancellation/refund terms directly
+with the client. No terms or deposit amount have been invented on your behalf.
+Use the request reference or your own agreed reference to identify the payment.
+Put the agreed appointment into the calendar you use and check for conflicts.
+The website does not check availability, reserve slots or send reminders.
+
+4. PAYID
+Confirm your registered PayID and the exact recipient name shown by your bank.
+To show them on the site, edit these two fields in booking-settings.js:
+payid: the registered receiving identifier
+recipientName: the name clients should see in their banking app
+These are receiving details only. Never add bank passwords, card details or API
+secrets to this file. Both fields are empty until you supply confirmed details.
+Until configured, clients are asked to request the details with their proposal.
+Clients copy the PayID, enter the agreed amount in their banking app and include
+the agreed reference. Check receipt in your own bank account before confirming
+the booking. A payment screenshot is not verification. Bank terms still apply;
+this site does not promise every transfer is instant or free.
+
+5. SHOPIFY DEPOSIT OR SERVICE PAYMENT
+Create a Shopify draft order/invoice for the agreed deposit or service amount
+and send its specific secure checkout link to the client. Use a clear description
+and the agreed reference so you can identify what the payment covers.
+Check the payment options actually offered before promising Afterpay.
+Shopify processing fees and settlement terms still apply. No next-day payout
+is guaranteed by this site. Shopify invoice creation is manual in this version.
+Official guide:
+https://help.shopify.com/en/manual/fulfillment/managing-orders/create-orders
+The art shop continues to use normal product/variant checkout links.
+
+6. UPDATE YOUR PRODUCTS
+In Shopify Admin > Products, update photos, title, price, description, variants
+and stock, then save. Publish new products to the Online Store channel.
+The site refreshes that public catalogue on opening and on Refresh. A labelled
+saved copy is available if the live request fails. Keep new text in English.
+This does not update the poster or tattoo/art portfolio photographs.
+
+7. CREATIVE PROJECTS AND CARE
+Creative projects promotes party scenography, commissions and collaborations.
+The current image is labelled as a portfolio painting. Real project photos can
+be added later with accurate descriptions. Care brings preparation and general
+tattoo-care information together; your individual dressing instructions prevail.
+
+8. PUBLISH THE FULL ZIP
+Keep index.html, the other seven HTML pages, scripts, styles and assets/ together
+at the hosting root. Configure the final public domain and write it to the NFC
+tag. The private review preview is not a public customer address.
+This update does not cancel old services or move historical appointments,
+customer records, deposits, subscriptions or domains. Keep a backup before
+replacing files and verify the new request, file-delivery and payment process
+before retiring the old workflow.
+
+ALL CLIENT PAGES, LABELS AND INCLUDED GUIDES ARE IN ENGLISH.
+NO REAL ENQUIRY, BOOKING, ACTIVATION EMAIL, INVOICE OR PAYMENT WAS SENT IN TESTING.
