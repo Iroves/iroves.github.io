@@ -1,130 +1,140 @@
 NATHA.TAT — COMPLETE NFC WEBSITE
-Updated 21 October 2026
+Updated 21 October 2026 — direct tattoo requests and attachments
 
-One public entry point for tattoo clients, art collectors and creative projects.
-The full website is included: all HTML, CSS, JavaScript, images and fonts.
-The interface is in English for Nathaly’s Australian clients.
+The NFC tag opens the final public website URL. The complete static site is
+included: eight HTML pages, CSS, JavaScript, images, fonts and English guides.
 
 PAGES
-index.html       Poster, four clear client routes and creative projects.
-tattoos.html     24 tattoo photographs, 7 style filters and a lightbox.
-book.html        Tattoo request process, deposit guidance and payment-link help.
-aftercare.html   Session preparation and tattoo care.
-shop.html        Art, prints, stickers and the existing Shopify checkout.
-art.html         6 portfolio artworks, separate from products for sale.
-projects.html    Party scenography, painting commissions and collaborations.
-about.html       Nathaly’s background in drafting, art and tattooing.
+index.html      The approved poster and clear routes for clients.
+tattoos.html    24 tattoo photographs, 7 style filters and a lightbox.
+book.html       On-site tattoo request form and Shopify/PayID payment guidance.
+aftercare.html  Session preparation and tattoo-care guidance.
+shop.html       Art, prints, stickers, bag and real Shopify checkout links.
+art.html        6 portfolio artworks, separate from products for sale.
+projects.html   Party scenography, commissions and creative collaborations.
+about.html      Nathaly’s drafting, study and artistic background.
 
-WHAT THE VOICE MESSAGE CHANGED
-The client-facing pages now bring the existing services together with a simpler
-home menu, a booking/payment guide, care information and a dedicated place to
-promote party scenography and other artistic work. Products and portfolio works
-remain distinct. No example party photograph or completed installation was
-invented; the creative-project image is labelled as a painting from her portfolio.
-The approved poster remains: pink NATHA.TAT, white INK & ART, @natha.tat on the
-teal patch, the supplied shirt X, and the moving flash-line effects.
+DIRECT BOOKING REQUESTS
+There are no external booking-platform links in the client pages.
+The request form collects contact details, idea, placement, approximate size,
+one to three preferred dates, reference links, optional photos/PDFs and a payment
+preference. An anonymous request reference identifies the enquiry. The reference
+is not a payment receipt, authorisation token or guaranteed appointment.
+Requests are sent to Nathaly for manual review. She agrees on the date, price
+range and deposit and confirms the booking after verifying the payment.
+This site does not provide a private calendar, conflict checking, automatic
+reminders, an availability feed or a customer/booking database.
+No existing appointments or deposits were migrated or cancelled.
 
-WHAT RUNS THE REAL PROCESSES
-Booking requests, references, availability and issued deposit links: Venue Ink.
-Catalogue administration, orders and checkout: Nathaly’s existing Shopify store.
-The NFC tag opens the website URL. It stores no catalogue, agenda or payments.
-The site links clients to the existing booking and checkout services. It does
-not copy the private calendar, issue deposit links or create Shopify invoices.
-It is not a replacement for either provider’s private administration system.
-No accounts, plans, domains, DNS, payouts or payment settings were changed.
+ENQUIRY ATTACHMENTS
+The general enquiry form on all eight pages and the tattoo request form allow
+up to three photos or PDFs, with a 9 MB combined client-side size limit.
+Named file inputs are submitted as multipart/form-data to FormSubmit using its
+documented native file-upload route. Submission with attachments continues on
+the message service. Text-only general enquiries retain in-page status handling.
+The tattoo email request uses the same native route for a consistent form.
+WhatsApp creates a text draft only; selected files must be attached in WhatsApp
+by the client before sending. No files are silently transferred to WhatsApp.
+Supported selections: JPG, JPEG, PNG, WEBP, HEIC/HEIF and PDF.
+The site does not store customer files or reference images in its public assets.
 
-PRODUCT UPDATES
-Edit photos, names, descriptions, prices, variants and availability in Shopify
-Admin > Products and Save. New products must be published to the Online Store
-channel. The shop refreshes the public catalogue when opened and on Refresh.
-If that request fails, it displays the bundled saved catalogue and labels it.
-Live photos use the current Shopify CDN URLs; saved images are fallback only.
-Shopify confirms final stock, prices, delivery, taxes and payment methods.
+EMAIL ACTIVATION — STILL REQUIRED
+All enquiry email is addressed to nathalymelomanso@gmail.com through FormSubmit.
+Inbox activation and a real delivery check on the final hosted domain remain
+necessary. Nathaly must submit a labelled setup test, confirm the activation
+email and verify delivery and attachments before advertising the email route.
+No enquiry, activation request, booking, invoice or payment was sent in testing.
+The site clearly shows pending email setup and provides WhatsApp, SMS and calls.
+After activation, update the setup/status wording in the HTML files and contact.js
+to reflect verified operation. FormSubmit is a form-delivery service, not a
+booking system or payment processor.
 
 PAYMENTS
-Art purchases go through the real Shopify cart and checkout with actual variant
-IDs and quantities. Afterpay appears only where the provider offers it.
-Tattoo deposits use the personal link Nathaly sends after agreeing on a booking.
-For a tattoo balance or creative-service fee, clients request the right payment
-link. Nathaly must create and send that link through her existing account.
-The site does not accept an arbitrary amount or mark a payment as received.
-The optional PayID guidance remains a manual enquiry; no PayID was invented.
-No purchase, deposit, invoice, booking request or payment was made during testing.
+PayID: receiving details have NOT been inferred from Nathaly’s phone or email.
+booking-settings.js has empty payid and recipientName fields. When she confirms
+both, enter the registered PayID and the exact name displayed by her bank.
+The payment panel will then display the details and enable Copy PayID.
+Until then, clients request the receiving details with an agreed proposal.
+Clients pay in their banking app using the agreed amount and booking reference.
+Nathaly checks her bank account manually and confirms the appointment.
+A screenshot or an enquiry does not mark a payment as received.
+The site does not access a bank API or automatically verify a bank transfer.
 
-CONTACT ACTIVATION — STILL REQUIRED
-Email enquiries use FormSubmit, independently of Shopify, addressed to
-nathalymelomanso@gmail.com. The form is still awaiting inbox activation.
-Nathaly must perform a clearly labelled setup enquiry on the final hosted domain,
-confirm the activation email and verify delivery before relying on this route.
-No activation message was sent during development. Calls, SMS and WhatsApp are
-available without this setup. Once activated, update the setup wording in the
-HTML pages and contact.js so it accurately describes the verified status.
+Shopify: Nathaly creates an invoice/draft order for the agreed deposit, balance
+or creative-service fee and sends the specific checkout link. This version does
+not create invoices automatically, request Shopify Admin access or expose API
+secrets. Available payment options, fees and payout timing depend on the provider
+and her account. It does not promise Afterpay or next-day payouts for every order.
+Products in the shop retain real variant IDs and Shopify checkout URLs.
+
+PRODUCT UPDATES AND LANGUAGE
+Edit products in Shopify Admin > Products, save, and publish new items to the
+Online Store channel. The shop fetches the current public catalogue on opening
+and when Refresh is pressed. A labelled saved catalogue is used if refresh fails.
+Live images use current Shopify CDN URLs; local photos are fallback only.
+All eight pages and included guides use English. Known Portuguese terms in the
+existing catalogue are displayed in English. Write future product text in English;
+the local wording map is not a general translation service.
+The poster, biography and tattoo/art portfolio do not have an admin editor.
+
+DESIGN AND CONTENT
+The approved poster, pink NATHA.TAT, white INK & ART, @natha.tat on teal, exact
+supplied shirt X, moving lines and current studio address are preserved.
+Party scenography is grounded in Nathaly’s voice message. Its current photograph
+is labelled as a painting from her portfolio, rather than an event-project photo.
+The background describes three years studying engineering and one year studying
+architecture. It does not claim completed degrees or completed large installations.
 
 PUBLISHING
-Extract this ZIP and keep the folder structure intact. Publish its CONTENTS to
-the root of suitable static hosting: index.html must be at the root and assets/
-must stay beside it. Configure the final domain, update og:url and og:image in
-the eight HTML pages, and write the final public URL to the NFC tag.
-The existing Sites review deployment remains owner-private.
-GitHub may store the source; check GitHub Pages’ current commercial-use rules
-before using it for a site focused on ecommerce or transactions.
-A normal file double-click can show the pages but hosted HTTP/HTTPS is required
-for catalogue refresh and email submission.
+Publish the CONTENTS of this ZIP to suitable static hosting with index.html and
+assets/ at the root. Keep all files together. Update og:url and og:image in the
+eight pages for the final domain and write that public URL to the NFC tag.
+The Sites design-review deployment remains owner-private.
+No domains, subscriptions, DNS, payout settings or external accounts were changed.
+GitHub may store source. Check current GitHub Pages commercial-use restrictions
+before using it as hosting for a site focused on ecommerce or transactions.
 
 MAINTENANCE
-unified.css              Client journeys and new booking/care/project layouts.
-portfolio.css            Existing page and gallery styles.
-styles.css, poster.css,
-hub.css, fonts.css       Shared theme, poster movement, shop and local fonts.
-card-data.js             Tattoo/art portfolio items and styles.
+OWNER-GUIDE.txt       Owner instructions in English.
+booking-settings.js  Confirmed public PayID receiving details, initially empty.
+booking.js           Request reference, date validation and WhatsApp text draft.
+enquiry-files.js     Shared attachment count/type/size checks.
+contact.js           General email submission and service-response handling.
+unified.css          Client routes, booking form, attachments and new page layouts.
+card-data.js         Portfolio photographs and styles.
 portfolio-core.js,
-portfolio.js             Filtering and lightbox navigation.
-shop-data.js             Saved public catalogue and image map.
-shop-core.js, hub.js     Live catalogue, product details, bag and checkout links.
-app.js                   Dialogs, sharing and legacy section redirects.
-contact.js               Email request and response handling.
-OWNER-GUIDE.txt          Practical owner notes in English.
-ASSET-SOURCES.json,
-SHOP-SOURCES.json        Original photograph/catalogue provenance.
+portfolio.js         Portfolio selection, filters and lightbox.
+shop-data.js         Saved product catalogue and fallback image map.
+shop-core.js, hub.js Live shop catalogue, product options, bag and checkout.
+app.js               Dialogs, sharing and legacy section redirects.
+styles.css, poster.css, hub.css, portfolio.css, fonts.css — existing theme/assets.
+ASSET-SOURCES.json and SHOP-SOURCES.json — original asset/catalogue provenance.
 
-STUDIO
-Understairs Ink
-Shop 7 & 8, 60 Applebee Street, St Peters NSW 2044
+CONTACT AND STUDIO
+Understairs Ink, Shop 7 & 8, 60 Applebee Street, St Peters NSW 2044
 https://maps.app.goo.gl/4BwaLYTXd6XYP9GZA?g_st=ic
 Instagram: https://www.instagram.com/Natha.tat
-Booking: https://venue.ink/@natha.tat
 Phone/SMS: +61 426 930 105
 
-SOURCES
-Nathaly’s supplied voice message and earlier background messages.
-Original portfolio: https://nathatat.com/portfolio/
-Original preparation guidance: https://nathatat.com/tips/
-General tattoo-care guidance:
+SOURCES AND CREDITS
+Nathaly’s supplied messages and voice recording.
+https://nathatat.com/portfolio/
+https://nathatat.com/tips/
 https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/tattoos
-Shopify draft orders/invoices:
 https://help.shopify.com/en/manual/fulfillment/managing-orders/create-orders
-Shopify domains: https://help.shopify.com/en/manual/domains
-The care page summarises general advice and points to these sources; Nathaly’s
-individual dressing instructions should be followed for each tattoo.
-
-CREDITS
-Nathaly / Natha.tat — photographs, original paintings and tattoos.
+https://www.auspayplus.com.au/solutions/payid-for-business
+https://formsubmit.co/documentation
+The care page links its sources. Individual dressing instructions take priority.
+Nathaly / Natha.tat — original photography, paintings and tattoos.
 Promotional poster — generated collage; original masters retained in source.
-DM Sans and Cormorant Garamond licences are included in assets/fonts/.
+Font licences are included in assets/fonts/.
 
-VERIFICATION FOR THIS VERSION
-All eight HTML pages passed local route, asset reference, duplicate-ID and new
-contact-topic checks. Existing tests passed for 24 tattoo photos, 7 style filters,
-6 artworks, 25 products and valid checkout URLs. JavaScript syntax passed.
-Browser review covered the desktop landing page, booking/care/shop navigation,
-and home/booking/projects layouts at a 390px content width. The creative-project
-button selected the correct enquiry topic. The shop fetched 25 live Shopify
-products in the browser; a product opened with its actual variant checkout link.
-No email submission, booking request, invoice creation or payment was performed.
-
-ENGLISH LANGUAGE
-All eight pages, interface labels, enquiry messages and included guides use
-English (en-AU). Known Portuguese wording in existing product names/materials
-is normalised to English for both saved and live catalogue display. New merchant
-content should be entered in English in Shopify; the local wording map is not
-a general translation service. Product handles and variant IDs are unchanged.
+VERIFICATION FOR THIS UPDATE
+JavaScript syntax and the existing portfolio/catalogue/checkout checks passed.
+New checks covered allowed file selections, the three-file and 9 MB limits,
+preferred-date validation, request summaries, unique IDs, local assets and
+multipart form encoding on all eight pages. Browser review confirmed the
+attachment field and additional-file controls, generated request reference,
+English labels and mobile request/payment layouts at 390px content width.
+Email delivery, attachment arrival, real bank receipt and live invoice payment
+still require owner setup and verification. They were not tested by sending.

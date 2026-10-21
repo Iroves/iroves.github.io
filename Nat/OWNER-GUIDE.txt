@@ -1,79 +1,83 @@
 NATHA.TAT — OWNER GUIDE
 21 October 2026
 
-ONE STARTING POINT
-Clients can explore tattoos, request an appointment, buy art, read aftercare
-and ask about party scenography or other creative projects from one website.
-The website and this guide use English throughout.
+THE NEW FLOW
+Clients tap the NFC card, view your site and send a tattoo request directly.
+You review their idea and dates, agree on the work, send deposit instructions,
+verify the payment and confirm the appointment yourself.
+The client pages no longer use an external booking platform.
+This is a manual approval flow, not an automatic calendar or booking database.
+Existing appointments and deposits remain wherever you originally arranged them.
 
-1. TATTOO BOOKINGS
-Book explains the request process: idea and references, placement and size,
-two or three available dates, your proposal and the deposit link.
-The actual request is submitted through your current Venue Ink page. Your
-private calendar, proposals and booking deposits remain there. No bookings
-were created or migrated during development.
+1. RECEIVING REQUESTS AND REFERENCE PICTURES
+Book collects the client’s details, idea, placement, size, preferred dates and
+payment preference. Both Book and the general enquiry form accept optional
+photos/PDFs: up to three files, 9 MB combined. Files are sent through FormSubmit
+to your inbox; they are not saved in the public website folder.
+The WhatsApp button prepares the request as text. Clients attach their pictures
+in WhatsApp themselves. Email is the route that includes selected form files.
 
-2. KEEPING PRODUCTS UP TO DATE
-In Shopify Admin, open Products, choose the item, edit its photos, name,
-price, description, options and availability, and save. Publish new products
-to the Online Store channel. Keep new catalogue text in English.
-Shop refreshes the public catalogue on opening and when Refresh is pressed.
-If the request fails, it shows a labelled saved copy. Checkout confirms the
-current price, stock and delivery options. These updates do not change the
-poster or the tattoo and art portfolio photographs.
-Known Portuguese wording in the existing catalogue is displayed in English
-on this site. This is a small local wording map, not a general translation
-service for future product descriptions. New or edited wording should be
-written in English in Shopify. Product IDs and checkout links are preserved.
+2. ACTIVATE EMAIL BEFORE RELYING ON IT
+The receiving email is nathalymelomanso@gmail.com. Submit a labelled setup test
+on your final hosted domain, confirm FormSubmit’s activation email and verify
+that a request and a harmless attachment arrive correctly. No activation email
+or test message was sent during development. Calls, SMS and WhatsApp are available
+while setup is pending. Once verified, update the activation wording in the HTML
+pages and contact.js. Keep the final domain in the setup/delivery check.
 
-3. PAYMENT LINKS FOR TATTOOS AND OTHER SERVICES
-Clients can request the correct payment link from Book > Payments.
-After agreeing on the work and price, create a Shopify draft order and send
-an invoice with its checkout link, using the features available in your account.
-Check which payment methods the specific order offers before promising Afterpay.
-The website does not issue invoices or payment links automatically and does
-not confirm that a payment was received. Booking deposits remain linked to
-the proposal in Venue Ink. Use the correct booking or service reference.
+3. AGREE ON THE BOOKING BEFORE TAKING A DEPOSIT
+Review the idea and reference images. Agree on the session date, an estimated
+price range, deposit amount and the applicable cancellation/refund terms directly
+with the client. No terms or deposit amount have been invented on your behalf.
+Use the request reference or your own agreed reference to identify the payment.
+Put the agreed appointment into the calendar you use and check for conflicts.
+The website does not check availability, reserve slots or send reminders.
+
+4. PAYID
+Confirm your registered PayID and the exact recipient name shown by your bank.
+To show them on the site, edit these two fields in booking-settings.js:
+payid: the registered receiving identifier
+recipientName: the name clients should see in their banking app
+These are receiving details only. Never add bank passwords, card details or API
+secrets to this file. Both fields are empty until you supply confirmed details.
+Until configured, clients are asked to request the details with their proposal.
+Clients copy the PayID, enter the agreed amount in their banking app and include
+the agreed reference. Check receipt in your own bank account before confirming
+the booking. A payment screenshot is not verification. Bank terms still apply;
+this site does not promise every transfer is instant or free.
+
+5. SHOPIFY DEPOSIT OR SERVICE PAYMENT
+Create a Shopify draft order/invoice for the agreed deposit or service amount
+and send its specific secure checkout link to the client. Use a clear description
+and the agreed reference so you can identify what the payment covers.
+Check the payment options actually offered before promising Afterpay.
+Shopify processing fees and settlement terms still apply. No next-day payout
+is guaranteed by this site. Shopify invoice creation is manual in this version.
 Official guide:
 https://help.shopify.com/en/manual/fulfillment/managing-orders/create-orders
+The art shop continues to use normal product/variant checkout links.
 
-4. SCENOGRAPHY AND CREATIVE PROJECTS
-Creative projects introduces party scenography, commissions and collaborations.
-Clients can share an idea, date, location, dimensions and budget range through
-WhatsApp, SMS or the contact form. Agree on scope, price and payment directly.
-The current image is labelled as a painting from your portfolio. Photographs
-of real completed events can be added later with accurate project descriptions.
+6. UPDATE YOUR PRODUCTS
+In Shopify Admin > Products, update photos, title, price, description, variants
+and stock, then save. Publish new products to the Online Store channel.
+The site refreshes that public catalogue on opening and on Refresh. A labelled
+saved copy is available if the live request fails. Keep new text in English.
+This does not update the poster or tattoo/art portfolio photographs.
 
-5. PREPARATION AND AFTERCARE
-Care brings session preparation and general tattoo-care guidance together,
-with source links. The individual instructions you provide for each tattoo
-and dressing take priority. Care is linked from the home page and navigation.
+7. CREATIVE PROJECTS AND CARE
+Creative projects promotes party scenography, commissions and collaborations.
+The current image is labelled as a portfolio painting. Real project photos can
+be added later with accurate descriptions. Care brings preparation and general
+tattoo-care information together; your individual dressing instructions prevail.
 
-6. CONTACT WITHOUT INSTAGRAM OR WHATSAPP
-Clients can call, send an SMS or use the enquiry form. The form uses FormSubmit
-independently of Shopify and still requires inbox activation. Submit a clearly
-labelled setup enquiry on the final domain, confirm the activation email and
-verify delivery before relying on this route. No test or activation message
-was sent during development. Calls, SMS and WhatsApp remain available.
+8. PUBLISH THE FULL ZIP
+Keep index.html, the other seven HTML pages, scripts, styles and assets/ together
+at the hosting root. Configure the final public domain and write it to the NFC
+tag. The private review preview is not a public customer address.
+This update does not cancel old services or move historical appointments,
+customer records, deposits, subscriptions or domains. Keep a backup before
+replacing files and verify the new request, file-delivery and payment process
+before retiring the old workflow.
 
-7. ONE PUBLIC ADDRESS; EXISTING SERVICES BEHIND IT
-Share this website's final public URL on the NFC tag and social profiles.
-This package does not cancel domains or subscriptions, or change payout times.
-A domain and a platform subscription are different things; check your invoices
-before deciding what to remove. Shopify and Venue Ink still run the store
-and booking processes. Do not cancel the old site before publishing this one,
-configuring the domain and verifying old links, catalogue, contact, booking
-and checkout. Orders and appointments were not moved to a new private dashboard.
-
-8. PUBLISH THE COMPLETE ZIP
-Extract everything. Keep index.html and assets/ together at the hosting root.
-Upload all files, including the eight HTML pages and unified.css. Configure
-the final address and write that public URL to the NFC tag. The private review
-preview is not the public customer address. Keep a backup before replacing files.
-
-PRESERVED DESIGN AND CONTENT
-The approved poster has pink NATHA.TAT, white INK & ART and @natha.tat on teal.
-The supplied shirt X, moving lines, contacts and studio address are preserved.
-The site includes 24 tattoo photographs, 6 artworks and 25 saved products.
-
-No real message, booking, invoice, purchase or payment was made during testing.
+ALL CLIENT PAGES, LABELS AND INCLUDED GUIDES ARE IN ENGLISH.
+NO REAL ENQUIRY, BOOKING, ACTIVATION EMAIL, INVOICE OR PAYMENT WAS SENT IN TESTING.

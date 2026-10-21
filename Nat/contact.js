@@ -12,11 +12,23 @@
   let busy=false,accepted=false;
   function show(message,error=false){status.textContent=message;status.classList.toggle('is-error',error);}
   form.addEventListener('input',()=>{if(accepted&&!busy){accepted=false;button.disabled=false;button.textContent='Send enquiry ↗';show('Your message has changed. Sending again creates a new enquiry.');}});
+  const files=root.NathaEnquiryFiles;
+  form.querySelectorAll('input[type="file"]').forEach(input=>input.addEventListener('change',()=>{const error=files.check(form);show(error||'');}));
   form.addEventListener('submit',async event=>{
+    // Files use the documented multipart form route. Text-only messages keep
+    // the existing in-page request and delivery-status handling.
+    if(files&&files.files(form).length){
+      const error=files.check(form);
+      if(busy||accepted||error||!form.reportValidity()){event.preventDefault();if(error)show(error,true);return;}
+      if(!/^https?:$/.test(root.location.protocol)){event.preventDefault();show('Please open the hosted card link to send your enquiry.',true);return;}
+      if(new FormData(form).get('_honey')){event.preventDefault();return;}
+      show('Opening the message service to send your enquiry and attachments. Delivery requires Nathaly’s inbox activation.');
+      return;
+    }
     event.preventDefault();if(busy||accepted||!form.reportValidity())return;
     const values=new FormData(form);if(values.get('_honey'))return;
     if(!/^https?:$/.test(root.location.protocol)){show('Please open the hosted card link to send your enquiry.',true);return;}
-    const payload=Object.fromEntries(values.entries());
+    const payload=Object.fromEntries([...values.entries()].filter(([,value])=>typeof value==='string'));
     payload.name=String(payload.name).trim();payload.email=String(payload.email).trim();payload.message=String(payload.message).trim();
     if(!payload.name||payload.message.length<10){show('Please enter your name and a message of at least 10 characters.',true);return;}
     payload._replyto=payload.email;payload._url=root.location.href.split('#')[0];
